@@ -1,0 +1,273 @@
+@charset "utf-8";
+/* 한국은행|화폐박물관페이지 CSS - common.css */
+/*그리드뷰 재설정+영역별 파티션 높이*/
+
+/*그리드뷰 재설정*/
+.grid {
+    width: 1150px;
+    max-width: 100%;
+    /*그리드도 같이 줄어들게!*/
+    z-index: -1;
+}
+
+
+/*공통class*/
+
+/*dn숨기기 class*/
+.dn {
+    display: none;
+}
+/*속박스 class*/
+.ibx {
+    width: 1150px;
+    max-width: 100%;
+    /*최대가로크기 100%란 
+            화면이 1280px보다 작으면 100%*/
+    margin: 0 auto;
+    /*outline: 3px dashed blue;*/
+
+}
+/*속박스 class*/
+
+/*******************************/
+/*******************************/
+
+
+
+/*각 영역별 파티션 높이값 설정하기*/
+/*********1. 상단영역*********/
+
+.tt1 {
+    height: 30px;
+    padding: 0;
+}
+
+.t1 {
+    height: 80px;
+}
+
+.td1 {
+    height: 50px;
+}
+
+/*****************************/
+/*****************************/
+
+/*1. 상단영역*/
+
+/*****메뉴바 배경색 top*****/
+#top {
+    position: relative;
+    /*부모자격*/
+}
+
+.top {
+    position: relative;
+    /*가상요소보다위에 오려면 포지션이 필요하다!*/
+}
+
+#top::before { /*메뉴바 색상*/
+    content: "";
+    z-index: -1;
+    display: block;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 45px;
+    background-color: #00acdc;
+    opacity: .5;/*★*/
+}
+
+
+#top::after { /*배경상단에 배경 선*/
+    content: "";
+    z-index: -1;
+    display: block;
+    position: absolute;
+    /*포지션을 줬기 때문에 before/after 상관x*/
+    top: 0px;
+    width: 100%;
+    height: 25px;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #ccc;
+}
+
+
+
+.gnb {/*??잘 안되는 부분 여기서부터 gnb는 문제인듯,,*/
+    /*잠시 숨기기 해둠*/
+    /*display: none;*/
+    z-index: 10;
+    
+    position: relative;
+    top: 0;
+    left: 0;
+    /*부모*/
+    
+    /*높이값을 설정하여 자식요소 숨기기/보이기*/
+    height: 19px;
+    overflow: hidden;
+    /*넘치는 자식요소 숨기기*/
+    
+    background-color: #fff;
+    outline: 5px dotted blue;
+
+}
+
+.gnb:hover{
+    height: 250px;
+}
+
+.gnb dl{ /*각 dl박스*/
+    text-align: center;
+    position: relative;
+    float: left;
+    width: 185px;
+    height: 240px;
+    box-sizing: border-box;
+    padding-left: 10px;
+    outline: 2px dotted red;
+}
+.gnb dd{
+    content: "";
+    overflow: hidden;
+    text-align: center;
+}
+.gnb dt {
+    font: bold 14px Nanum;
+    margin-bottom: 8px;
+}
+.gnb dl:hover dt a {
+    color: #f00;
+    text-decoration: underline;
+}
+.gnb dd a {
+    font: bold 11px/21px;
+    color: #c91616;
+}
+
+/*****메뉴바 배경색 top*****/
+
+/*****메뉴바 배경색 top*****/
+
+
+
+/*1. 상단영역*/
+
+/*****************************/
+/*****************************/
+
+/**********2.컨텐츠영역1**********/
+#cont1 {
+    padding-top: 10px;
+}
+
+.c1 {
+    height: 300px;
+    padding: 0;
+}
+
+.c2 {
+    /*기획전시,새소식,교육 상단 간격*/
+    margin-top: 5px;
+    height: 50px;
+}
+
+.c3 {
+    height: 250px;
+}
+
+/*******************************/
+/*******************************/
+
+/*2. 컨텐츠영역1 (배너박스색상)*/
+
+#cont1{
+    position: relative;
+    /*부모*/
+}
+
+#cont1::before { /*배너영역 배경색상*/
+    content: "";
+    z-index: -1;
+    display: block;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 316px;
+    background-color: #eee;
+    /*opacity: .5;*//*★*/
+}
+
+
+/*2. 컨텐츠영역1 (배너박스색상)*/
+
+
+
+
+
+
+
+
+
+/*2. 컨텐츠영역2 (교육박스 하단 로고 다섯개)*/
+
+
+
+/*******************************/
+/*******************************/
+
+/**********5.하단영역**********/
+#info {
+    padding-top: 15px;
+}
+
+/*****/
+.i1 {
+    height: 70px;
+}
+
+.i2 {
+    height: 80px;
+}
+
+/*****************************/
+/*****************************/
+
+
+/**********5. 하단영역 (배경색상)**********/
+#info{
+    position: relative;
+}
+
+#info::before { /*하단바 색상*/
+    content: "";
+    z-index: -1;
+    display: block;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 130px;
+    background-color: #3C4559;
+    /*opacity: .5;*//*★*/
+}
+
+
+
+
+
+
+
+/**********5. 하단영역 (배경색상)**********/
+
+
+
+
+
+
+
+
+
+
+
+

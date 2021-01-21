@@ -1,0 +1,559 @@
+@charset "utf-8";
+/* 한국은행|화폐박물관페이지 CSS - main.css */
+/* 메인페이지에만 나오는 요소를 코딩한다! */
+
+/*외부파일 불러오기*/
+@import url(gridSet.css);
+@import url(gridView.css);
+/*****/
+@import url(reset.css);
+@import url(core.css);
+@import url(common.css);
+
+/*메인페이지 전체 디자인보기*/
+body {
+    position: relative;
+    /*가상요소의 부모*/
+}
+
+body::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /*크기는 부모를 기준함
+    (body에 relative가 없으면 보이는 화면기준)*/
+    /*background-image: url(../images/BG_cap.png);*/
+    background-repeat: no-repeat;
+    background-position: center top;
+    z-index: -11;
+    opacity: .5;
+}
+
+
+/******************************************/
+/******************************************/
+
+
+/*1. 상단영역 로고이미지*/
+.Hlogo img {
+    /*메인로고*/
+    position: relative;
+    width: 330px;
+    top: 0px;
+    left: 8px;
+}
+
+/*1. 상단영역 로고이미지*/
+
+/*****좌측 맨 최상단 tlink *****/
+.tlink {
+    margin-left: 16px;
+    background-color: #627fa4;
+    width: 348px;
+    height: 26px;
+    /*opacity: .5;*/
+}
+
+.tlink li {
+    margin: 0 10px;
+    font-size: 13px;
+    font-weight: bold;
+    height: 80px;
+    padding-top: 3px;
+}
+
+.tlink li + li {
+    /*사이사이 선넣기*/
+    border-left: 1px solid #fff;
+    padding-right: 0px;
+    padding-left: 7px;
+}
+
+.tlink a {
+    color: #fff;
+}
+
+/*****좌측 맨 최상단 tlink*****/
+
+/*****최상단 우측 로그인박스 login*****/
+.login li {
+    /*단어 간격*/
+    margin-top: 2px;
+    margin-left: 4px;
+    font-size: 13px;
+    top: 0;
+    border: 1px dotted red;
+}
+
+
+.login li + li {
+    /*??잘 안되는 부분*/
+    border-left: 2px solid #000;
+}
+
+
+.login li:first-child a {
+    color: #ea5a59;
+    font-weight: bold;
+}
+
+.login li:nth-child(2) a {
+    color: #666666;
+}
+
+.login li:nth-child(2) {
+    padding-left: 28px;
+    margin-left: 9px;
+}
+
+.login li:nth-child(3) a {
+    color: #1f497d;
+    font-weight: bold;
+}
+
+.login li:nth-child(3) {
+    padding-left: 11px;
+    margin-left: 26px;
+}
+
+.login li:last-child a {
+    color: #1f497d;
+}
+
+.login li:last-child {
+    background-color: #F4F5F7;
+    padding-right: 12px;
+    margin-top: 0px;
+    margin-left: 23px;
+    padding-bottom: 8px;
+    padding-left: 13px;
+    border-left: none;
+}
+
+
+/*****최상단 우측 로그인박스 login*****/
+
+/*****좌측 상단 <한국은행 홈페이지 버튼.home*****/
+.home {
+    position: relative;
+    /*부모*/
+    padding-top: 30px;
+    padding-left: 38px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #1f497d;
+}
+
+.hlb {
+    /*<버튼*/
+    position: absolute;
+    width: 21px;
+    top: 30px;
+    left: 13px;
+}
+
+/*****좌측 상단 <한국은행 홈페이지 버튼.home*****/
+
+
+
+/******************************************/
+/******************************************/
+
+
+
+
+/*2. 컨텐츠영역1 (네이비박스)*/
+.navybox {
+    position: relative;
+    /*부모자격*/
+    width: 95%;
+    height: 93%;
+    margin-top: 2%;
+    box-sizing: border-box;
+    background-color: #1f497d;
+    color: #fff;
+    padding: 5px;
+    /*opacity: .5;*/
+}
+
+.navybox dt {
+    /*관람사전예약필수*/
+    position: absolute;
+    padding-left: 6%;
+    padding-top: 1%;
+    font-weight: bold;
+    font-size: 17px;
+    letter-spacing: 1.5px;
+}
+
+.gobtn {
+    /*개인관람신청바로가기 앞 >버튼*/
+    position: absolute;
+    top: 11%;
+    left: 50%;
+    width: 14px;
+    float: right;
+}
+
+
+.go {
+    /*개인관람신청바로가기*/
+    position: absolute;
+    padding-left: 42%;
+    padding-top: 2%;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+
+.time {
+    position: absolute;
+    width: 85%;
+    height: 34%;
+    top: 22%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-top: 1px solid #fff;
+    /*border: 2px dotted red;*/
+
+}
+
+.clock {
+    /*시계모양*/
+    position: absolute;
+    padding-top: 26px;
+    padding-left: 12px;
+    height: 40px;
+}
+
+.calendar {
+    /*달력모양*/
+    position: absolute;
+    padding-top: 33px;
+    padding-left: 15px;
+    height: 40px;
+}
+
+.time1 {
+    /*관람시간:*/
+    position: absolute;
+    top: 30%;
+    left: 10%;
+    font-weight: bold;
+    font-size: 14px;
+    color: #86acfd;
+    /*border: 2px dotted yellow;*/
+}
+
+.time2 {
+    /*화요일 ~ 일요일 10:00 ~ 17:00*/
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    font-size: 14px;
+    /*border: 2px dotted yellow;*/
+}
+
+.day {
+    position: absolute;
+    width: 85%;
+    height: 32%;
+    top: 57%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-top: 2px dotted #627fa4;
+    /*border: 2px dotted red;*/
+}
+
+.day1 {
+    /*휴관일 :*/
+    position: absolute;
+    top: 30%;
+    left: 10%;
+    font-weight: bold;
+    font-size: 14px;
+    color: #86acfd;
+    /*border: 2px dotted yellow;*/
+}
+
+.day2 {
+    /*월요일, 공휴일, 설연휴 및 추석연휴, 선거일, 12월 29일 ~ 다음해 1월 2일*/
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    font-size: 14px;
+    /*border: 2px dotted yellow;*/
+}
+
+/*2. 컨텐츠영역1 (네이비박스)*/
+/******************************************/
+/******************************************/
+
+/*3. 컨텐츠영역2*/
+
+/*****기획전시*****/
+.cont2 {
+    position: relative;
+}
+
+.ctit1 {
+    /*기획전시*/
+    position: absolute;
+    border: 1px solid #dee0e6;
+    width: 349px;
+    height: 314px;
+    font-size: 17px;
+    font-weight: bold;
+    margin-left: 17px;
+    padding-top: 19px;
+    padding-left: 28px;
+}
+
+.ctit1 img {
+    /*기획전시 상단로고*/
+    position: absolute;
+    padding-top: 8px;
+    padding-left: 240px;
+}
+
+.cont2-1 {
+    /*기획전시 박스*/
+    padding: 0;
+}
+
+.cbx1 {
+    /*이미지 싸고있는 박스*/
+    position: absolute;
+    border: 1px solid #dee0e6;
+    width: 318px;
+    height: 238px;
+    margin-top: 14px;
+}
+
+.cbx1 img {
+    /*기획전시 이미지*/
+    position: absolute;
+    width: 177px;
+    bottom: 0;
+    right: 72px;
+}
+
+.ctit2 {
+    /*새소식*/
+    position: absolute;
+    border: 1px solid #dee0e6;
+    left: 395px;
+/*    position: relative;
+    border: 1px solid #dee0e6;
+    left: 12px;*/
+    width: 332px;
+    height: 314px;
+    font-size: 17px;
+    font-weight: bold;
+    padding-top: 19px;
+    padding-left: 26px;
+}
+
+.ctit2 img {
+    /*새소식 상단로고*/
+    position: absolute;
+    width: 13px;
+    padding-top: 11px;
+    padding-left: 238px;
+}
+
+.cbx2 {
+    /*글자 박스*/
+    position: absolute;
+    border-top: 1px solid #000;
+    width: 305px;
+    height: 238px;
+    margin-top: 15px;
+}
+
+.cbx2 ol {
+    padding-top: 8px;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.cbx2 li a {
+    color: #333333;
+}
+
+.cbx2 li:nth-of-type(even) {
+    /*새소식 컨텐츠 내용에 년도*/
+    color: #767676;
+    font-size: 11px;
+    padding-left: 10px;
+    padding-top: 5px;
+}
+
+.post {
+    padding-top: 5px;
+}
+
+.cont2-2 {
+    /*새소식 박스*/
+    padding: 0;
+}
+
+.ctit3 {
+    /*??이 부분 봐주세요*/
+    /*교육*/
+    position: absolute;
+    border: 1px solid #dee0e6;
+    left: 754px;
+    /*    position: relative;
+    border: 1px solid #dee0e6;
+    left: -12px;*/
+    width: 347px;
+    height: 314px;
+    font-size: 17px;
+    font-weight: bold;
+    padding-top: 19px;
+    padding-left: 28px;
+
+    background-color: #e8e8e8;
+    /*opacity: .5;*/
+}
+
+.ctit3 img {
+    /*상단로고*/
+    position: absolute;
+    width: 13px;
+    padding-top: 13px;
+    padding-left: 269px;
+}
+
+.cont2-3 {
+    /*교육박스*/
+    padding: 0;
+}
+
+.edu {
+    /*교육*/
+    position: relative;
+    width: 320px;
+    height: 225px;
+    border-top: 1px solid #000;
+    font-weight: normal;
+    font-size: 14px;
+    padding-top: -7px;
+    margin-top: 15px;
+}
+
+.edu dd {
+    /*교육컨텐츠*/
+    margin: 0 auto;
+    padding-bottom: 6px;
+}
+
+.eduline {
+    /*교육컨텐츠 하단에 로고다섯개*/
+    position: absolute;
+    box-sizing: border-box;
+    width: 325px;
+    height: 78px;
+    margin-top: 152px;
+    background-color: #B6C4E1;
+    /*border: 1px dotted blue;*/
+}
+
+.eduline li + li {
+    /*사이사이 선넣기*/
+    border-left: 1px solid #fff;
+}
+
+.eduline img {
+    height: 40px;
+    display: inline-block;
+    padding-top: 8px;
+}
+
+.eduline li {
+    width: 60px;
+    height: 100%;
+    display: block;
+    padding-left: 3px;
+    text-align: center;
+}
+
+.eduline a {
+    display: block;
+    font-size: 11px;
+}
+
+
+/******************************************/
+/******************************************/
+
+/******5. 하단영역 로고******/
+.info {
+    position: relative;
+    /*부모*/
+}
+
+.BLlogo img {
+    /*하단 좌측로고*/
+    position: absolute;
+    bottom: 16px;
+    left: 23px;
+    width: 122px;
+}
+
+.BRlogo img {
+    /*하단 우측로고*/
+    position: absolute;
+    bottom: -10px;
+    right: 16px;
+    width: 145px;
+}
+
+/******5. 하단영역 로고******/
+
+/*5. 하단영역*/
+.uline {
+    /*border: 3px dotted yellow;*/
+    position: absolute;
+    width: 98.5%;
+    top: 40px;
+    padding-left: 13px;
+    padding-bottom: 4px;
+    margin-left: -17px;
+    font-size: 13px;
+
+    /*padding: 16 0 9 10;*/
+
+
+}
+
+.uline li a {
+    padding: 3px;
+    word-spacing: 8px;
+    color: #BDC0CA;
+}
+
+.uline li:nth-child(2) a {
+    color: #FF6767;
+    font-weight: bold;
+}
+
+
+address {
+    /*주소*/
+    position: absolute;
+    font-style: normal;
+    font-size: 13px;
+    /*border: 2px dotted orange;*/
+    word-spacing: -3.5px;
+    line-height: 10px;
+    bottom: 22px;
+    width: 474px;
+    margin-left: -30px;
+    color: #BDC0CA;
+}
+
+/*5. 하단영역*/
