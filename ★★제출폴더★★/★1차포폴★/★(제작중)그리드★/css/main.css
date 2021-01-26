@@ -28,7 +28,7 @@ body::before {
     background-repeat: no-repeat;
     background-position: center top;
     z-index: -11;
-    opacity: .5;
+    /*opacity: .5;*/
 }
 
 
@@ -41,8 +41,8 @@ body::before {
     /*메인로고*/
     position: relative;
     width: 330px;
-    top: 0px;
-    left: 8px;
+    top: 2px;
+    left: 11px;
 }
 
 /*1. 상단영역 로고이미지*/
@@ -78,62 +78,81 @@ body::before {
 /*****좌측 맨 최상단 tlink*****/
 
 /*****최상단 우측 로그인박스 login*****/
+.login {
+    position: relative;
+}
+
 .login li {
     /*단어 간격*/
-    margin-top: 2px;
-    margin-left: 4px;
+    margin-top: 4px;
+    margin-left: 10px;
     font-size: 13px;
     top: 0;
-    border: 1px dotted red;
+    /*border: 1px dotted red;*/
 }
 
 
 .login li + li {
-    /*??잘 안되는 부분*/
-    border-left: 2px solid #000;
+    border-left: 1px solid #000;
 }
 
 
 .login li:first-child a {
+    /*로그인*/
     color: #ea5a59;
     font-weight: bold;
 }
 
 .login li:nth-child(2) a {
+    /*확대축소*/
     color: #666666;
 }
 
 .login li:nth-child(2) {
+    /*확대축소*/
     padding-left: 28px;
     margin-left: 9px;
 }
 
 .login li:nth-child(3) a {
+    /*한국은행SNS*/
     color: #1f497d;
     font-weight: bold;
+    margin-left: 2px;
 }
 
 .login li:nth-child(3) {
+    /*한국은행SNS*/
     padding-left: 11px;
     margin-left: 26px;
 }
 
 .login li:last-child a {
+    /*영어*/
     color: #1f497d;
 }
 
 .login li:last-child {
+    /*영어*/
+    /*???*/
     background-color: #F4F5F7;
-    padding-right: 12px;
-    margin-top: 0px;
+    height: 17px;
+    padding-right: 15px;
+    margin-top: -1px;
     margin-left: 23px;
-    padding-bottom: 8px;
+    padding-top: 4px;
+    padding-bottom: 6px;
     padding-left: 13px;
+
+    /*  padding: 4px 0 6px 13px;*/
+    /*위 오 아래 왼*/
     border-left: none;
 }
 
-
 /*****최상단 우측 로그인박스 login*****/
+
+
+
 
 /*****좌측 상단 <한국은행 홈페이지 버튼.home*****/
 .home {
@@ -156,20 +175,368 @@ body::before {
 
 /*****좌측 상단 <한국은행 홈페이지 버튼.home*****/
 
+/*우측상단 검색어를 입력하세요 박스*/
+
+.search {
+    /*남색큰박스*/
+    border: 1px solid #1f497d;
+    background-color: #1f497d;
+    height: 34px;
+    width: 268px;
+    margin-top: -3px;
+    margin-left: -14px;
+}
+
+.wbox {
+    /*내부 흰박스*/
+    position: relative;
+    border: 1px solid #fff;
+    background-color: #fff;
+    height: 28px;
+    width: 218px;
+    margin-top: 2px;
+    margin-left: 2px;
+}
+
+/*우측상단 검색어를 입력하세요 박스*/
+
+
+/*************GNB메뉴*************/
+
+.gnb {
+    position: relative;
+    /*부모자격 - .gnb>ul가상요소 before의 부모*/
+    background-color: #00acdc;
+    margin-top: -10px;
+    z-index: 10;
+}
+
+/*.gnb>ul에 가상요소로 하위메뉴 배경판 만들기*/
+.gnb > ul::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50px;
+    margin-top: -5px;
+    left: 0;
+    /*부모를 기준한 위치설정!*/
+    /*부모는? .gnb*/
+    width: 100%;
+    height: 0;
+    /*처음에 안보임*/
+    background-color: #fff;
+    box-shadow: 3px 3px 3px 0 #ccc;
+    /*트랜지션: 속시이지*/
+    /*.smenu의 이징 가속도와 동일하게 셋팅!*/
+}
+
+/*.gnb>ul에 마우스 오버시 하위메뉴 배경판 보이기*/
+.gnb > ul:hover::before {
+    height: 200px;
+}
+
+/*gnb 클릭 메뉴바*/
+.gnb > ul {
+    width: 1120px;
+    height: 45px;
+    margin: 0 auto;
+    /*마영오-블록가로중앙
+            (가로크기가 화면보다 작아야함!)*/
+    /*outline: 2px solid red;*/
+}
+
+.gnb > ul > li {
+    width: 205px;
+    height: 45px;
+    text-align: center;
+}
+
+.gnb > ul > li:last-child {
+    width: 60px;
+    float: right;
+    text-align: center;
+}
+
+/*gnb메뉴 사이 선*/
+.gnb ul li + li {
+    border-left: 1px solid rgba(165, 203, 247, 0.72);
+}
+
+.gnb ul li:first-child {
+    border-left: 1px solid rgba(165, 203, 247, 0.72)
+}
+
+.gnb ul li:last-child {
+    border-right: 1px solid rgba(165, 203, 247, 0.72)
+}
+
+/*
+        .gnb>ul>li>a
+        -> 상위메뉴 li의 직계자식 a요소
+        .gnb>ul>li a
+        -> 상위메뉴 li의 자손 a요소 전부
+            (서브메뉴의 a요소가 포함됨!)
+        */
+
+.gnb > ul > li .gtit {
+    display: block;
+    /*디자인적용위해*/
+    width: 100%;
+    height: 100%;
+    color: white;
+    text-decoration: none;
+    font: bold 18px/47px "맑은 고딕", Verdana;
+    /*font: 스 두 크/줄 체;*/
+    /*font를 한번에 설정할 경우 줄간격을 여기서 설정하거나
+            아랫줄에서 설정해야 초기화 되지 않는다!*/
+    /*line-height: 50px;*/
+
+
+
+}
+
+/*상위메뉴 li에 마우스 오버시 a요소의 배경색, 글자색변경*/
+.gnb > ul > li:hover > a {
+    color: #fff;
+    background-color: #005596;
+    text-decoration: underline;
+}
+
+/*서브메뉴 디자인*/
+.smenu {
+    position: absolute;
+    /*겹쳐지고 위치부모기준*/
+    width: 200px;
+    /*
+            float을 해제 안하고
+            아래로 내려가는 방법:
+            
+            하위의 li가 float되어
+            옆으로 흐르지만 가로크기를
+            지정하여 li가 그 크기와 
+            같으면 아래로 자동으로 내려감
+            
+            참고)
+            float 없애는 셋팅 -> float: none;
+            */
+    background-color: #219be6;
+
+    /*서브메뉴 숨기기*/
+    /*1.높이값 0*/
+    height: 0;
+    /*2.넘치는 요소 숨기기*/
+    overflow: hidden;
+
+}
+
+/*상위메뉴에 마우스 오버시 하위메뉴 보이기*/
+.gnb > ul > li:hover .smenu {
+    height: 200px;
+    width: 1120px;
+}
+
+/*
+            원래 css의 transition은 두가지 크기에 변화 과정이다.
+            따라서 높이값을 각각 설정해 주는 것이 기본이다.
+            여러개일 경우 셋팅의 편의성을 위해 max-height를 사용하는
+            방법이 있다
+        */
+
+
+.smenu li {
+    width: 100%;
+    /*부모박스의 가로크기를 채운다
+            -옆으로 흐르지 못한다!*/
+}
+
+/*하위 메뉴의 li에 마우스 오버시 
+        a요소의 글자색, 배경색 변경*/
+.smenu li:hover a {
+    text-decoration: underline;
+}
+
+
+
+
+
+
+
+/*************GNB메뉴*************/
+
 
 
 /******************************************/
 /******************************************/
 
+/*A2-1. 배너영역*/
+#ban {
+    position: relative;
+    margin-top: 11px;
+    margin-left: 17px;
+    /*border: 1px solid red;*/
+    width: 735px;
+    height: 275px;
+
+    float: left;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+#ban .slide {
+    position: absolute;
+    /*이미지는 박스에 맞춤!*/
+    width: 300%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.slide {
+    position: relative;
+    content: "";
+    float: left;
+    top: 0;
+    left: 0;
+    width: 745px;
+    height: 275px;
+}
+
+.slide li {
+    width: 33.33%;
+    height: 100%;
+    list-style: none;
+}
+
+.slide li img {
+    /*이미지는 박스에 맞춤!*/
+    position: absolute;
+    width: 33.335%;
+    height: 100%;
+}
+
+.sbox{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+}
+/*배너 이미지 위에, ol li 글자 밑에 그라데이션*/
+.slide .sbox::before {
+    content: "";
+    display: block;
+    box-sizing: border-box;
+    position: absolute;
+    /*border: 1px solid red;*/
+    width: 100%;
+    height: 50%;
+    bottom: 0;
+    background:
+        linear-gradient(to bottom, transparent, #000);
+    /*opacity: .3;*/
+    z-index: 1;
+}
+
+#ban .slide ol {
+    color: #fff;
+    height: 100%;
+    width: 100%;
+    float: left;
+}
+
+.slide ol .stit{
+    position: absolute;
+    font-size: 22px;
+    width: 700px;
+    height: 100px;
+    bottom: 0;
+    padding-left: 45px;
+    z-index:1;
+}
+.slide ol .scont{
+    position: absolute;
+    font-size: 13px;
+    width: 700px;
+    height: 70px;
+    bottom: 0;
+    padding-left: 45px;
+    z-index:1;
+}
+/***********************/
+
+.slide ol:nth-child(2) li:first-child{
+    width: 100%;
+}
+.slide ol:nth-child(2) li:last-child {
+    width: 100%;
+}
+/***********************/
+
+.slide ol:nth-child(3) li:first-child{
+    width: 100%;
+    margin-bottom: 1%;
+    margin-left: 2%;
+}
+.slide ol:nth-child(3) li:last-child {
+    width: 100%;
+    margin-bottom: 1%;
+    margin-left: 2%;
+}
+/***********************/
 
 
+
+/**********************/
+.bld {
+    display: none;
+}
+
+
+
+
+
+/*A2-3. 배너 이동버튼*/
+
+.lbtns img {
+    position: absolute;
+    left: 0;
+    margin-top: 116px;
+    width: 35px;
+}
+
+.rbtns img {
+    position: absolute;
+    margin-top: 114px;
+    right: 0;
+    width: 35px;
+}
+
+/*A2-3. 배너 이동버튼*/
+
+
+
+
+/*A2-4. 배너 블릿*/
+
+
+.blt {
+    position: absolute;
+    padding-top: 138px;
+    padding-left: 49px;
+}
+
+.blt li {
+    padding-right: 4px;
+}
+
+
+/*A2-4. 배너 블릿*/
 
 /*2. 컨텐츠영역1 (네이비박스)*/
 .navybox {
     position: relative;
     /*부모자격*/
-    width: 95%;
     height: 93%;
+    width: 367px;
     margin-top: 2%;
     box-sizing: border-box;
     background-color: #1f497d;
@@ -300,13 +667,14 @@ body::before {
 
 .ctit1 {
     /*기획전시*/
-    position: absolute;
     border: 1px solid #dee0e6;
     width: 349px;
     height: 314px;
     font-size: 17px;
     font-weight: bold;
-    margin-left: 17px;
+    margin-left: 2px;
+    margin-top: -15px;
+    margin-right: -13px;
     padding-top: 19px;
     padding-left: 28px;
 }
@@ -318,10 +686,6 @@ body::before {
     padding-left: 240px;
 }
 
-.cont2-1 {
-    /*기획전시 박스*/
-    padding: 0;
-}
 
 .cbx1 {
     /*이미지 싸고있는 박스*/
@@ -341,19 +705,15 @@ body::before {
 }
 
 .ctit2 {
-    /*새소식*/
-    position: absolute;
     border: 1px solid #dee0e6;
     left: 395px;
-/*    position: relative;
-    border: 1px solid #dee0e6;
-    left: 12px;*/
-    width: 332px;
     height: 314px;
     font-size: 17px;
     font-weight: bold;
     padding-top: 19px;
     padding-left: 26px;
+    margin-left: -3px;
+    margin-top: -15px;
 }
 
 .ctit2 img {
@@ -367,10 +727,11 @@ body::before {
 .cbx2 {
     /*글자 박스*/
     position: absolute;
-    border-top: 1px solid #000;
-    width: 305px;
+    /*border-top: 1px solid #000;*/
+    width: 303px;
     height: 238px;
     margin-top: 15px;
+    border-top: 1px solid #000;
 }
 
 .cbx2 ol {
@@ -383,6 +744,7 @@ body::before {
     color: #333333;
 }
 
+
 .cbx2 li:nth-of-type(even) {
     /*새소식 컨텐츠 내용에 년도*/
     color: #767676;
@@ -393,31 +755,28 @@ body::before {
 
 .post {
     padding-top: 5px;
+    line-height: 17px;
+    padding: 4px;
 }
 
-.cont2-2 {
-    /*새소식 박스*/
-    padding: 0;
+.ctit2 .ptit {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    display: block;
+    width: 288px;
 }
 
 .ctit3 {
-    /*??이 부분 봐주세요*/
-    /*교육*/
-    position: absolute;
     border: 1px solid #dee0e6;
-    left: 754px;
-    /*    position: relative;
-    border: 1px solid #dee0e6;
-    left: -12px;*/
-    width: 347px;
     height: 314px;
     font-size: 17px;
     font-weight: bold;
     padding-top: 19px;
-    padding-left: 28px;
-
+    padding-left: 21px;
+    margin-left: -31px;
+    margin-top: -15px;
     background-color: #e8e8e8;
-    /*opacity: .5;*/
 }
 
 .ctit3 img {
@@ -426,11 +785,6 @@ body::before {
     width: 13px;
     padding-top: 13px;
     padding-left: 269px;
-}
-
-.cont2-3 {
-    /*교육박스*/
-    padding: 0;
 }
 
 .edu {
@@ -447,8 +801,14 @@ body::before {
 
 .edu dd {
     /*교육컨텐츠*/
-    margin: 0 auto;
+    margin-left: 0;
     padding-bottom: 6px;
+
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    display: block;
+    width: 257px;
 }
 
 .eduline {
