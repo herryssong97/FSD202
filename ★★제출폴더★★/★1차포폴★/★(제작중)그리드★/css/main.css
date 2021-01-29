@@ -159,7 +159,7 @@ body::before {
     position: relative;
     /*부모*/
     padding-top: 30px;
-    padding-left: 38px;
+    padding-left: 40px;
     font-size: 14px;
     font-weight: bold;
     color: #1f497d;
@@ -170,7 +170,7 @@ body::before {
     position: absolute;
     width: 21px;
     top: 30px;
-    left: 13px;
+    left: 15px;
 }
 
 /*****좌측 상단 <한국은행 홈페이지 버튼.home*****/
@@ -200,6 +200,16 @@ body::before {
 
 /*우측상단 검색어를 입력하세요 박스*/
 
+/*검색어박스 하단 순위박스*/
+.rank{
+    border: 3px solid orange;
+    width: 268px;
+    height: 30px;
+    margin-left: -14px;
+}
+
+/*검색어박스 하단 순위박스*/
+
 
 /*************GNB메뉴*************/
 
@@ -209,25 +219,7 @@ body::before {
     background-color: #00acdc;
     margin-top: -10px;
     z-index: 10;
-}
-
-/*.gnb>ul에 가상요소로 하위메뉴 배경판 만들기*/
-.gnb > ul::before {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 50px;
-    margin-top: -5px;
-    left: 0;
-    /*부모를 기준한 위치설정!*/
-    /*부모는? .gnb*/
-    width: 100%;
-    height: 0;
-    /*처음에 안보임*/
-    background-color: #fff;
-    box-shadow: 3px 3px 3px 0 #ccc;
-    /*트랜지션: 속시이지*/
-    /*.smenu의 이징 가속도와 동일하게 셋팅!*/
+    /*border: 1px solid yellow;*/
 }
 
 /*.gnb>ul에 마우스 오버시 하위메뉴 배경판 보이기*/
@@ -246,37 +238,31 @@ body::before {
 }
 
 .gnb > ul > li {
-    width: 205px;
+    width: 170px;
     height: 45px;
     text-align: center;
 }
 
 .gnb > ul > li:last-child {
-    width: 60px;
+    /*햄벅 로고*/
+    width: 55px;
     float: right;
     text-align: center;
 }
 
 /*gnb메뉴 사이 선*/
-.gnb ul li + li {
+.gnb > ul > li + li {
     border-left: 1px solid rgba(165, 203, 247, 0.72);
 }
 
-.gnb ul li:first-child {
+.gnb > ul > li:first-child {
     border-left: 1px solid rgba(165, 203, 247, 0.72)
 }
 
-.gnb ul li:last-child {
+.gnb > ul > li:last-child {
     border-right: 1px solid rgba(165, 203, 247, 0.72)
 }
 
-/*
-        .gnb>ul>li>a
-        -> 상위메뉴 li의 직계자식 a요소
-        .gnb>ul>li a
-        -> 상위메뉴 li의 자손 a요소 전부
-            (서브메뉴의 a요소가 포함됨!)
-        */
 
 .gnb > ul > li .gtit {
     display: block;
@@ -285,14 +271,10 @@ body::before {
     height: 100%;
     color: white;
     text-decoration: none;
-    font: bold 18px/47px "맑은 고딕", Verdana;
+    text-align: center;
+    font: bold 16px/47px "맑은 고딕", Verdana;
     /*font: 스 두 크/줄 체;*/
-    /*font를 한번에 설정할 경우 줄간격을 여기서 설정하거나
-            아랫줄에서 설정해야 초기화 되지 않는다!*/
     /*line-height: 50px;*/
-
-
-
 }
 
 /*상위메뉴 li에 마우스 오버시 a요소의 배경색, 글자색변경*/
@@ -302,24 +284,15 @@ body::before {
     text-decoration: underline;
 }
 
-/*서브메뉴 디자인*/
+/*서브메뉴 배경 디자인*/
 .smenu {
     position: absolute;
     /*겹쳐지고 위치부모기준*/
-    width: 200px;
-    /*
-            float을 해제 안하고
-            아래로 내려가는 방법:
-            
-            하위의 li가 float되어
-            옆으로 흐르지만 가로크기를
-            지정하여 li가 그 크기와 
-            같으면 아래로 자동으로 내려감
-            
-            참고)
-            float 없애는 셋팅 -> float: none;
-            */
-    background-color: #219be6;
+    left: 0;
+    /*부모? .gnb*/
+    width: 100%;
+
+    background-color: #fff;
 
     /*서브메뉴 숨기기*/
     /*1.높이값 0*/
@@ -332,27 +305,90 @@ body::before {
 /*상위메뉴에 마우스 오버시 하위메뉴 보이기*/
 .gnb > ul > li:hover .smenu {
     height: 200px;
-    width: 1120px;
 }
 
-/*
-            원래 css의 transition은 두가지 크기에 변화 과정이다.
-            따라서 높이값을 각각 설정해 주는 것이 기본이다.
-            여러개일 경우 셋팅의 편의성을 위해 max-height를 사용하는
-            방법이 있다
-        */
-
-
-.smenu li {
-    width: 100%;
+/*하위메뉴 세로로 가르는 선*/
+.smenu > ol > li + li {
+    /*???*/
+    width: 165px;
+    border-left: 1px solid red;
+    height: 120px;
     /*부모박스의 가로크기를 채운다
             -옆으로 흐르지 못한다!*/
 }
 
-/*하위 메뉴의 li에 마우스 오버시 
+.smenu > ol > li {
+    /*border: 1px solid blue;*/
+    text-align: left;
+}
+
+
+
+.smenu > ol > .tit2 {
+    /*메뉴바 펼쳐지구 둘째줄*/
+    width: 165px;
+    border-left: 1px solid red;
+    border-top: 1px solid blue;
+    height: 80px;
+}
+
+.smenu > ol > li > a {
+    /*서브메뉴 오버시 나름 제목들*/
+    font-size: 17px;
+    color: #0096cc;
+    font-weight: bold;
+    padding-bottom: 10px;
+}
+
+.smenu > ol > li > ul > li {
+    /*서브메뉴 오버시 가장 하단의 ·어쩌고 내용들*/
+    float: none;
+    font-size: 13px;
+}
+
+.smenu > ol > li > ul > li::before {
+    /*서브메뉴 오버시 가장 하단의 ·어쩌고 내용들 앞에 점찍어주기*/
+    content: "·";
+}
+
+.smenu > ol > li + li {
+    /*서브메뉴 오버시 구분선*/
+    /*border: 1px solid #000;*/
+}
+
+/*메뉴바의 li에 마우스 오버시 
         a요소의 글자색, 배경색 변경*/
-.smenu li:hover a {
+.smenu > ol > li a:hover {
     text-decoration: underline;
+}
+
+.smenu > ol > li{
+    position: relative;
+    padding-top: 10px;
+    padding-left: 15px;
+}
+
+.smenu > ol > li.tit {
+    /*메뉴 제일 좌측 제일 큰박스 검은글씨*/
+    position: absolute;
+    top: 0;
+    left: -170px;
+    width: 170px;
+    height: 200px;
+    font-size: 18px;
+    font-weight: bold;
+    padding-top: 15px;
+    color: #333;
+
+    /*메뉴바 오버시 첫번째 세로선*/
+
+}
+
+
+.smenu > ol {
+    position: relative;
+    margin-left: 170px;
+    height: 100px;
 }
 
 
@@ -373,12 +409,12 @@ body::before {
     position: relative;
     margin-top: 11px;
     margin-left: 17px;
-    /*border: 1px solid red;*/
+    border: 1px solid red;
     width: 735px;
     height: 275px;
 
     float: left;
-    overflow: hidden;
+    /*overflow: hidden;*/
     box-sizing: border-box;
 }
 
@@ -389,16 +425,8 @@ body::before {
     height: 100%;
     top: 0;
     left: 0;
-}
-
-.slide {
-    position: relative;
-    content: "";
-    float: left;
-    top: 0;
-    left: 0;
-    width: 745px;
-    height: 275px;
+    /*
+    border: 1px solid red;*/
 }
 
 .slide li {
@@ -414,12 +442,13 @@ body::before {
     height: 100%;
 }
 
-.sbox{
+.sbox {
     position: relative;
     width: 100%;
     height: 100%;
     bottom: 0;
 }
+
 /*배너 이미지 위에, ol li 글자 밑에 그라데이션*/
 .slide .sbox::before {
     content: "";
@@ -443,44 +472,50 @@ body::before {
     float: left;
 }
 
-.slide ol .stit{
+.slide ol .stit {
     position: absolute;
     font-size: 22px;
     width: 700px;
     height: 100px;
     bottom: 0;
     padding-left: 45px;
-    z-index:1;
+    z-index: 1;
 }
-.slide ol .scont{
+
+.slide ol .scont {
     position: absolute;
     font-size: 13px;
     width: 700px;
     height: 70px;
     bottom: 0;
     padding-left: 45px;
-    z-index:1;
+    z-index: 1;
 }
+
 /***********************/
 
-.slide ol:nth-child(2) li:first-child{
+.slide ol:nth-child(2) li:first-child {
     width: 100%;
 }
+
 .slide ol:nth-child(2) li:last-child {
     width: 100%;
 }
+
 /***********************/
 
-.slide ol:nth-child(3) li:first-child{
+.slide ol:nth-child(3) li:first-child {
     width: 100%;
     margin-bottom: 1%;
     margin-left: 2%;
 }
+
 .slide ol:nth-child(3) li:last-child {
     width: 100%;
     margin-bottom: 1%;
     margin-left: 2%;
 }
+
 /***********************/
 
 
@@ -522,6 +557,7 @@ body::before {
     position: absolute;
     padding-top: 138px;
     padding-left: 49px;
+    width: 88px;
 }
 
 .blt li {
