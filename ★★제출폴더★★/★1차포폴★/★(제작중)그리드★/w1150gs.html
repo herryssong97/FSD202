@@ -15,6 +15,43 @@
 
 
     </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(function() {
+            $(".rbtns").click(function() {
+                //alert(333);
+                $(".slide").animate({
+                    left: "-100%"
+                }, 600, function() {
+                    $(this).append($("li", this).first())
+                        .css({
+                            left: "0"
+                        });
+                }); /// animate///
+            }); /////// click ///////// 
+
+            $(".lbtns").click(function() {
+                //alert(333);
+                $(".slide").prepend($(".slide>li").last())
+                    .css({
+                        left: "-100%"
+                    });
+
+
+                $(".slide").animate({
+                    left: "0%"
+                }, 600); /// animate///
+            }); /////// click /////////
+
+            /*setInterval(function(){
+                $(".rbtns").trigger("click");
+            },3000);
+            */
+
+
+        }); //////// jQB ////////////////////    
+
+    </script>
 </head>
 
 <body>
@@ -60,20 +97,6 @@
                     <ul class="wbox">
                     </ul>
                 </div>
-                <div class="rank">
-                    <ol>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                    </ol>
-                </div>
             </div>
             <!--메인메뉴-->
             <div class="col-12 td1">
@@ -84,6 +107,12 @@
                             <div class="smenu">
                                 <ol>
                                     <li class="tit">이용안내</li>
+                                    <p>
+                                        <span>
+                                            Guide
+                                        </span>
+                                            <img src="images/gnb1.gif" alt="이용안내이미지">
+                                    </p>
                                     <li><a href="">관람안내</a></li>
                                     <li>
                                         <a href="">개인관람신청</a>
@@ -94,25 +123,33 @@
                                     </li>
                                     <li><a href="">단체관람신청</a>
                                         <ul>
-                                            <li>단체관람 일시 중지 안내</li>
+                                            <li><a href="">단체관람 일시 중지 안내</a></li>
                                         </ul>
                                     </li>
                                     <li><a href="">편의시설 안내</a></li>
                                     <li><a href="">찾아오시는 길</a></li>
                                 </ol>
                                 <ol>
-                                    <li class="tit2"><a href="">FAQ</a></li>
-                                    <li class="tit2"><a href="">새소식</a></li>
-                                    <li class="tit2"><a href="">자유게시판</a></li>
+                                    <li><a href="">FAQ</a></li>
+                                    <li><a href="">새소식</a></li>
+                                    <li><a href="">자유게시판</a></li>
+                                    <li></li>
+                                    <li></li>
                                 </ol>
                             </div>
                         </li>
 
                         <li>
-                           <a href="" class="gtit">전시</a>
+                            <a href="" class="gtit">전시</a>
                             <div class="smenu">
                                 <ol>
                                     <li class="tit">전시</li>
+                                    <p>
+                                        <span>
+                                            Exhibition
+                                        </span>
+                                            <img src="images/gnb2.gif" alt="전시이미지">
+                                    </p>
                                     <li><a href="">온라인 전시관</a>
                                         <ul>
                                             <li><a href="">VR체험관(360º Video)</a></li>
@@ -130,6 +167,10 @@
                             <div class="smenu">
                                 <ol>
                                     <li class="tit">교육</li>
+                                    <p>
+                                        <span>Education</span>
+                                        <img src="images/gnb3.gif" alt="교육이미지">
+                                    </p>
                                     <li><a href="">프로그램안내</a>
                                         <ul>
                                             <li><a href="">강좌안내</a></li>
@@ -160,6 +201,10 @@
                             <div class="smenu">
                                 <ol>
                                     <li class="tit">디지털 아카이브</li>
+                                    <p>
+                                        <span>Collection</span>
+                                        <img src="images/gnb4.gif" alt="디지털아카이브">
+                                    </p>
                                     <li><a href="">화폐박물관 역사</a>
                                         <ul>
                                             <li><a href="">1950년 이전</a></li>
@@ -178,6 +223,10 @@
                             <div class="smenu">
                                 <ol>
                                     <li class="tit">소장품</li>
+                                    <p>
+                                        <span>BOK Museum</span>
+                                        <img src="images/gnb5.gif" alt="소장품이미지">
+                                    </p>
                                     <li><a href="">한국의 화폐</a></li>
                                     <li><a href="">국가별 화폐</a></li>
                                     <li><a href="">미술품</a></li>
@@ -188,7 +237,10 @@
                         <li><a href="" class="gtit">박물관 소개</a>
                             <div class="smenu">
                                 <ol>
-                                    <li class="tit">인사말</li>
+                                    <li class="tit">박물관 소개</li>
+                                    <p>
+                                        <img src="images/gnb6.gif" alt="박물관소개이미지">
+                                    </p>
                                     <li><a href="">미션·비전</a></li>
                                     <li><a href="">연혁</a></li>
                                     <li><a href="">건물소개</a></li>
@@ -259,17 +311,15 @@
                             <li>
                                 <img src="images/btn_slide_stop1.png" alt="">
                             </li>
-                            <div class="blt2">
-                                <li>
-                                    <img src="images/num_on.png" alt="">
-                                </li>
-                                <li>
-                                    <img src="images/num_off.png" alt="">
-                                </li>
-                                <li>
-                                    <img src="images/num_off.png" alt="">
-                                </li>
-                            </div>
+                            <li>
+                                <img src="images/num_on.png" alt="">
+                            </li>
+                            <li>
+                                <img src="images/num_off.png" alt="">
+                            </li>
+                            <li>
+                                <img src="images/num_off.png" alt="">
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -423,4 +473,6 @@
 
 
 
-</body></html>
+</body>
+
+</html>
