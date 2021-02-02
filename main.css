@@ -1,0 +1,984 @@
+@charset "utf-8";
+/* 한국은행|화폐박물관페이지 CSS - main.css */
+/* 메인페이지에만 나오는 요소를 코딩한다! */
+
+/*외부파일 불러오기*/
+@import url(gridSet.css);
+@import url(gridView.css);
+/*****/
+@import url(reset.css);
+@import url(core.css);
+@import url(common.css);
+
+/*메인페이지 전체 디자인보기*/
+body {
+    position: relative;
+    /*가상요소의 부모*/
+}
+
+body::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /*크기는 부모를 기준함
+    (body에 relative가 없으면 보이는 화면기준)*/
+    /*background-image: url(../images/BG_cap.png);*/
+    background-repeat: no-repeat;
+    background-position: center top;
+    z-index: -11;
+    /*opacity: .5;*/
+}
+
+
+/******************************************/
+/******************************************/
+
+
+/*1. 상단영역 로고이미지*/
+.Hlogo img {
+    /*메인로고*/
+    position: relative;
+    width: 330px;
+    top: 2px;
+    left: 11px;
+}
+
+/*1. 상단영역 로고이미지*/
+
+/*****좌측 맨 최상단 tlink *****/
+.tlink {
+    margin-left: 16px;
+    background-color: #627fa4;
+    width: 348px;
+    height: 26px;
+    /*opacity: .5;*/
+}
+
+.tlink li {
+    margin: 0 10px;
+    font-size: 13px;
+    font-weight: bold;
+    height: 80px;
+    padding-top: 3px;
+}
+
+.tlink li + li {
+    /*사이사이 선넣기*/
+    border-left: 1px solid #fff;
+    padding-right: 0px;
+    padding-left: 7px;
+}
+
+.tlink a {
+    color: #fff;
+}
+
+/*****좌측 맨 최상단 tlink*****/
+
+/*****최상단 우측 로그인박스 login*****/
+.login {
+    position: relative;
+}
+
+.login li {
+    /*단어 간격*/
+    margin-top: 4px;
+    margin-left: 10px;
+    font-size: 13px;
+    top: 0;
+    /*border: 1px dotted red;*/
+}
+
+
+.login li + li {
+    border-left: 1px solid #000;
+}
+
+
+.login li:first-child a {
+    /*로그인*/
+    color: #ea5a59;
+    font-weight: bold;
+}
+
+.login li:nth-child(2) a {
+    /*확대축소*/
+    color: #666666;
+}
+
+.login li:nth-child(2) {
+    /*확대축소*/
+    padding-left: 28px;
+    margin-left: 9px;
+}
+
+.login li:nth-child(3) a {
+    /*한국은행SNS*/
+    color: #1f497d;
+    font-weight: bold;
+    margin-left: 2px;
+}
+
+.login li:nth-child(3) {
+    /*한국은행SNS*/
+    padding-left: 11px;
+    margin-left: 26px;
+}
+
+.login li:last-child a {
+    /*영어*/
+    color: #1f497d;
+}
+
+.login li:last-child {
+    /*영어*/
+    /*???*/
+    background-color: #F4F5F7;
+    height: 17px;
+    padding-right: 15px;
+    margin-top: -1px;
+    margin-left: 23px;
+    padding-top: 4px;
+    padding-bottom: 6px;
+    padding-left: 13px;
+
+    /*  padding: 4px 0 6px 13px;*/
+    /*위 오 아래 왼*/
+    border-left: none;
+}
+
+/*****최상단 우측 로그인박스 login*****/
+
+
+
+
+/*****좌측 상단 <한국은행 홈페이지 버튼.home*****/
+.home {
+    position: relative;
+    /*부모*/
+    padding-top: 30px;
+    padding-left: 40px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #1f497d;
+}
+
+.hlb {
+    /*<버튼*/
+    position: absolute;
+    width: 21px;
+    top: 30px;
+    left: 15px;
+}
+
+/*****좌측 상단 <한국은행 홈페이지 버튼.home*****/
+
+/*우측상단 검색어를 입력하세요 박스*/
+
+.search {
+    /*남색큰박스*/
+    border: 1px solid #1f497d;
+    background-color: #1f497d;
+    height: 34px;
+    width: 268px;
+    margin-top: -3px;
+    margin-left: -14px;
+}
+
+.wbox {
+    /*내부 흰박스*/
+    position: relative;
+    border: 1px solid #fff;
+    background-color: #fff;
+    height: 28px;
+    width: 218px;
+    margin-top: 2px;
+    margin-left: 2px;
+}
+
+/*우측상단 검색어를 입력하세요 박스*/
+
+
+/*************GNB메뉴*************/
+
+.gnb {
+    position: relative;
+    /*부모자격 - .gnb>ul가상요소 before의 부모*/
+    background-color: #00acdc;
+    margin-top: -10px;
+    z-index: 10;
+    /*border: 1px solid yellow;*/
+}
+
+/*.gnb>ul에 마우스 오버시 하위메뉴 배경판 보이기*/
+.gnb > ul:hover::before {
+    height: 200px;
+}
+
+/*gnb 클릭 메뉴바*/
+.gnb > ul {
+    width: 1120px;
+    height: 45px;
+    margin: 0 auto;
+    /*마영오-블록가로중앙
+            (가로크기가 화면보다 작아야함!)*/
+    /*outline: 2px solid red;*/
+}
+
+.gnb > ul > li {
+    width: 170px;
+    height: 45px;
+    text-align: center;
+}
+
+.gnb > ul > li:last-child {
+    width: 55px;
+    float: right;
+    text-align: center;
+}
+
+/*gnb메뉴 사이 선*/
+.gnb > ul > li + li {
+    border-left: 1px solid rgba(165, 203, 247, 0.72);
+}
+
+.gnb > ul > li:first-child {
+    border-left: 1px solid rgba(165, 203, 247, 0.72)
+}
+
+.gnb > ul > li:last-child {
+    border-right: 1px solid rgba(165, 203, 247, 0.72)
+}
+
+
+.gnb > ul > li .gtit {
+    display: block;
+    /*디자인적용위해*/
+    width: 100%;
+    height: 100%;
+    color: white;
+    text-decoration: none;
+    font: bold 18px/47px "맑은 고딕", Verdana;
+    /*font: 스 두 크/줄 체;*/
+    /*line-height: 50px;*/
+
+}
+
+/*상위메뉴 li에 마우스 오버시 a요소의 배경색, 글자색변경*/
+.gnb > ul > li:hover > a {
+    color: #fff;
+    background-color: #005596;
+    text-decoration: underline;
+}
+
+/*서브메뉴 배경 디자인*/
+.smenu {
+    position: absolute;
+    /*겹쳐지고 위치부모기준*/
+    left: 0;
+    /*부모? .gnb*/
+    width: 100%;
+
+    background-color: #fff;
+
+    /*서브메뉴 숨기기*/
+    /*1.높이값 0*/
+    height: 0;
+    /*2.넘치는 요소 숨기기*/
+    overflow: hidden;
+
+}
+
+/*상위메뉴에 마우스 오버시 하위메뉴 보이기*/
+.gnb > ul > li:hover .smenu {
+    height: 200px;
+}
+
+
+.smenu > ol {
+    position: relative;
+    margin-left: 170px;
+    height: 200px;
+}
+
+.gnb > ul > li:first-child .smenu > ol {
+    height: 130px;
+}
+
+/*smenu밑에 작은글씨랑 이미지박스*/
+.smenu p {
+    /*전체*/
+    position: absolute;
+    width: 170px;
+    height: 145px;
+    top: 20%;
+    left: 0;
+    font-size: 13px;
+    color: #808080;
+    display: block;
+}
+
+.gnb>li:first-child>.smenu>p{
+    position: absolute;
+    width: 170px;
+    height: 130px;
+    border: 1px solid blue;
+    top: 40%;
+    left: -17.8%;
+    font-size: 13px;
+    color: #808080;
+    display: block;
+}
+
+.smenu span {
+    /*글자*/
+    position: relative;
+    display: block;
+}
+
+.smenu img {
+    height: 70px;
+    padding-top: 10px;
+    text-align: center;
+}
+
+/*smenu밑에 작은글씨랑 이미지박스*/
+
+.smenu > ol > li {
+    width: 190px;
+    height: 100%;
+    /*부모박스의 가로크기를 채운다
+            -옆으로 흐르지 못한다!*/
+    box-sizing: border-box;
+    padding: 15px;
+    text-align: left;
+}
+
+
+.smenu > ol > li {
+    border-left: 1px solid #ccc;
+}
+
+.gnb > ul > li:first-child .smenu > ol:nth-child(1) > li {
+    border-bottom: 1px solid #ccc;
+}
+
+.smenu > ol:nth-child(1) > li:last-child {
+    border-left: 1px solid #ccc;
+}
+
+.smenu > ol > li > a {
+    /*서브메뉴 오버시 나름 제목들*/
+    font-size: 16px;
+    color: #0096cc;
+    font-weight: bold;
+}
+
+.smenu > ol > li > a:hover {
+    /*서브메뉴 오버시 나름 제목들*/
+    text-decoration: underline;
+}
+
+.smenu > ol > li > ul {
+    padding-top: 7px;
+}
+
+.smenu > ol > li > ul > li {
+    /*서브메뉴 오버시 가장 하단의 ·어쩌고 내용들*/
+    float: none;
+    font-size: 13px;
+    padding-top: 3px;
+}
+
+.smenu > ol > li > ul > li::before {
+    /*서브메뉴 오버시 가장 하단의 ·어쩌고 내용들 앞에 점찍어주기*/
+    content: "·";
+}
+
+/*메뉴바의 li에 마우스 오버시 
+        a요소의 글자색, 배경색 변경*/
+.smenu > ol > li > ul > li:hover a {
+    text-decoration: underline;
+}
+
+.smenu > ol > li:first-child {}
+
+.smenu > ol > li.tit {
+    position: absolute;
+    top: 0;
+    left: -170px;
+    width: 170px;
+    height: 200px;
+    font-size: 18.5px;
+    font-weight: bold;
+    padding-top: 15px;
+    color: #333;
+    text-align: center;
+    /*메뉴바 오버시 첫번째 세로선*/
+    /*    border-right: 1px solid #f00;*/
+}
+
+
+
+
+
+
+
+/*************GNB메뉴*************/
+
+
+
+/******************************************/
+/******************************************/
+
+/*A2-1. 배너영역*/
+#ban {
+    position: relative;
+    margin-top: 11px;
+    margin-left: 17px;
+    /*border: 1px solid red;*/
+    width: 735px;
+    height: 275px;
+
+    float: left;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+#ban .slide {
+    position: absolute;
+    /*이미지는 박스에 맞춤!*/
+    width: 300%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    /*
+    border: 1px solid red;*/
+}
+
+.slide li {
+    width: 33.33%;
+    height: 100%;
+    list-style: none;
+}
+
+.slide li img {
+    /*이미지는 박스에 맞춤!*/
+    position: absolute;
+    width: 33.335%;
+    height: 100%;
+}
+
+.sbox {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+}
+
+/*배너 이미지 위에, ol li 글자 밑에 그라데이션*/
+.slide .sbox::before {
+    content: "";
+    display: block;
+    box-sizing: border-box;
+    position: absolute;
+    /*border: 1px solid red;*/
+    width: 100%;
+    height: 50%;
+    bottom: 0;
+    background:
+        linear-gradient(to bottom, transparent, #000);
+    /*opacity: .3;*/
+    z-index: 1;
+}
+
+#ban .slide ol {
+    color: #fff;
+    height: 100%;
+    width: 100%;
+    float: left;
+}
+
+.slide ol .stit {
+    position: absolute;
+    font-size: 22px;
+    width: 700px;
+    height: 100px;
+    bottom: 0;
+    padding-left: 45px;
+    z-index: 1;
+}
+
+.slide ol .scont {
+    position: absolute;
+    font-size: 13px;
+    width: 700px;
+    height: 70px;
+    bottom: 0;
+    padding-left: 45px;
+    z-index: 1;
+}
+
+/***********************/
+
+.slide ol:nth-child(2) li:first-child {
+    width: 100%;
+}
+
+.slide ol:nth-child(2) li:last-child {
+    width: 100%;
+}
+
+/***********************/
+
+.slide ol:nth-child(3) li:first-child {
+    width: 100%;
+    margin-bottom: 1%;
+    margin-left: 2%;
+}
+
+.slide ol:nth-child(3) li:last-child {
+    width: 100%;
+    margin-bottom: 1%;
+    margin-left: 2%;
+}
+
+/***********************/
+
+
+
+/**********************/
+.bld {
+    display: none;
+}
+
+
+
+
+
+/*A2-3. 배너 이동버튼*/
+
+.lbtns img {
+    position: absolute;
+    left: 0;
+    margin-top: 116px;
+    width: 35px;
+    z-index: 1;
+}
+
+.rbtns img {
+    position: absolute;
+    margin-top: 114px;
+    right: 0;
+    width: 35px;
+}
+
+/*A2-3. 배너 이동버튼*/
+
+
+
+
+/*A2-4. 배너 블릿*/
+
+
+.blt {
+    position: absolute;
+    padding-top: 138px;
+    padding-left: 49px;
+}
+
+.blt li {
+    padding-right: 4px;
+}
+
+
+/*A2-4. 배너 블릿*/
+
+/*2. 컨텐츠영역1 (네이비박스)*/
+.navybox {
+    position: relative;
+    /*부모자격*/
+    height: 93%;
+    width: 367px;
+    margin-top: 2%;
+    box-sizing: border-box;
+    background-color: #1f497d;
+    color: #fff;
+    padding: 5px;
+    /*opacity: .5;*/
+}
+
+.navybox dt {
+    /*관람사전예약필수*/
+    position: absolute;
+    padding-left: 6%;
+    padding-top: 1%;
+    font-weight: bold;
+    font-size: 17px;
+    letter-spacing: 1.5px;
+}
+
+.gobtn {
+    /*개인관람신청바로가기 앞 >버튼*/
+    position: absolute;
+    top: 11%;
+    left: 50%;
+    width: 14px;
+    float: right;
+}
+
+
+.go {
+    /*개인관람신청바로가기*/
+    position: absolute;
+    padding-left: 42%;
+    padding-top: 2%;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+
+.time {
+    position: absolute;
+    width: 85%;
+    height: 34%;
+    top: 22%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-top: 1px solid #fff;
+    /*border: 2px dotted red;*/
+
+}
+
+.clock {
+    /*시계모양*/
+    position: absolute;
+    padding-top: 26px;
+    padding-left: 12px;
+    height: 40px;
+}
+
+.calendar {
+    /*달력모양*/
+    position: absolute;
+    padding-top: 33px;
+    padding-left: 15px;
+    height: 40px;
+}
+
+.time1 {
+    /*관람시간:*/
+    position: absolute;
+    top: 30%;
+    left: 10%;
+    font-weight: bold;
+    font-size: 14px;
+    color: #86acfd;
+    /*border: 2px dotted yellow;*/
+}
+
+.time2 {
+    /*화요일 ~ 일요일 10:00 ~ 17:00*/
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    font-size: 14px;
+    /*border: 2px dotted yellow;*/
+}
+
+.day {
+    position: absolute;
+    width: 85%;
+    height: 32%;
+    top: 57%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-top: 2px dotted #627fa4;
+    /*border: 2px dotted red;*/
+}
+
+.day1 {
+    /*휴관일 :*/
+    position: absolute;
+    top: 30%;
+    left: 10%;
+    font-weight: bold;
+    font-size: 14px;
+    color: #86acfd;
+    /*border: 2px dotted yellow;*/
+}
+
+.day2 {
+    /*월요일, 공휴일, 설연휴 및 추석연휴, 선거일, 12월 29일 ~ 다음해 1월 2일*/
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    font-size: 14px;
+    /*border: 2px dotted yellow;*/
+}
+
+/*2. 컨텐츠영역1 (네이비박스)*/
+/******************************************/
+/******************************************/
+
+/*3. 컨텐츠영역2*/
+
+/*****기획전시*****/
+.cont2 {
+    position: relative;
+}
+
+.ctit1 {
+    /*기획전시*/
+    border: 1px solid #dee0e6;
+    width: 349px;
+    height: 314px;
+    font-size: 17px;
+    font-weight: bold;
+    margin-left: 2px;
+    margin-top: -15px;
+    margin-right: -13px;
+    padding-top: 19px;
+    padding-left: 28px;
+}
+
+.ctit1 img {
+    /*기획전시 상단로고*/
+    position: absolute;
+    padding-top: 8px;
+    padding-left: 240px;
+}
+
+
+.cbx1 {
+    /*이미지 싸고있는 박스*/
+    position: absolute;
+    border: 1px solid #dee0e6;
+    width: 318px;
+    height: 238px;
+    margin-top: 14px;
+}
+
+.cbx1 img {
+    /*기획전시 이미지*/
+    position: absolute;
+    width: 177px;
+    bottom: 0;
+    right: 72px;
+}
+
+.ctit2 {
+    border: 1px solid #dee0e6;
+    left: 395px;
+    height: 314px;
+    font-size: 17px;
+    font-weight: bold;
+    padding-top: 19px;
+    padding-left: 26px;
+    margin-left: -3px;
+    margin-top: -15px;
+}
+
+.ctit2 img {
+    /*새소식 상단로고*/
+    position: absolute;
+    width: 13px;
+    padding-top: 11px;
+    padding-left: 238px;
+}
+
+.cbx2 {
+    /*글자 박스*/
+    position: absolute;
+    /*border-top: 1px solid #000;*/
+    width: 303px;
+    height: 238px;
+    margin-top: 15px;
+    border-top: 1px solid #000;
+}
+
+.cbx2 ol {
+    padding-top: 8px;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.cbx2 li a {
+    color: #333333;
+}
+
+
+.cbx2 li:nth-of-type(even) {
+    /*새소식 컨텐츠 내용에 년도*/
+    color: #767676;
+    font-size: 11px;
+    padding-left: 10px;
+    padding-top: 5px;
+}
+
+.post {
+    padding-top: 5px;
+    line-height: 17px;
+    padding: 4px;
+}
+
+.ctit2 .ptit {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    display: block;
+    width: 288px;
+}
+
+.ctit3 {
+    border: 1px solid #dee0e6;
+    height: 314px;
+    font-size: 17px;
+    font-weight: bold;
+    padding-top: 19px;
+    padding-left: 21px;
+    margin-left: -31px;
+    margin-top: -15px;
+    background-color: #e8e8e8;
+}
+
+.ctit3 img {
+    /*상단로고*/
+    position: absolute;
+    width: 13px;
+    padding-top: 13px;
+    padding-left: 269px;
+}
+
+.edu {
+    /*교육*/
+    position: relative;
+    width: 320px;
+    height: 225px;
+    border-top: 1px solid #000;
+    font-weight: normal;
+    font-size: 14px;
+    padding-top: -7px;
+    margin-top: 15px;
+}
+
+.edu dd {
+    /*교육컨텐츠*/
+    margin-left: 0;
+    padding-bottom: 6px;
+
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    display: block;
+    width: 257px;
+}
+
+.eduline {
+    /*교육컨텐츠 하단에 로고다섯개*/
+    position: absolute;
+    box-sizing: border-box;
+    width: 325px;
+    height: 78px;
+    margin-top: 152px;
+    background-color: #B6C4E1;
+    /*border: 1px dotted blue;*/
+}
+
+.eduline li + li {
+    /*사이사이 선넣기*/
+    border-left: 1px solid #fff;
+}
+
+.eduline img {
+    height: 40px;
+    display: inline-block;
+    padding-top: 8px;
+}
+
+.eduline li {
+    width: 60px;
+    height: 100%;
+    display: block;
+    padding-left: 3px;
+    text-align: center;
+}
+
+.eduline a {
+    display: block;
+    font-size: 11px;
+}
+
+
+/******************************************/
+/******************************************/
+
+/******5. 하단영역 로고******/
+.info {
+    position: relative;
+    /*부모*/
+}
+
+.BLlogo img {
+    /*하단 좌측로고*/
+    position: absolute;
+    bottom: 16px;
+    left: 23px;
+    width: 122px;
+}
+
+.BRlogo img {
+    /*하단 우측로고*/
+    position: absolute;
+    bottom: -10px;
+    right: 16px;
+    width: 145px;
+}
+
+/******5. 하단영역 로고******/
+
+/*5. 하단영역*/
+.uline {
+    /*border: 3px dotted yellow;*/
+    position: absolute;
+    width: 98.5%;
+    top: 40px;
+    padding-left: 13px;
+    padding-bottom: 4px;
+    margin-left: -17px;
+    font-size: 13px;
+
+    /*padding: 16 0 9 10;*/
+
+
+}
+
+.uline li a {
+    padding: 3px;
+    word-spacing: 8px;
+    color: #BDC0CA;
+}
+
+.uline li:nth-child(2) a {
+    color: #FF6767;
+    font-weight: bold;
+}
+
+
+address {
+    /*주소*/
+    position: absolute;
+    font-style: normal;
+    font-size: 13px;
+    /*border: 2px dotted orange;*/
+    word-spacing: -3.5px;
+    line-height: 10px;
+    bottom: 22px;
+    width: 474px;
+    margin-left: -30px;
+    color: #BDC0CA;
+}
+
+/*5. 하단영역*/
