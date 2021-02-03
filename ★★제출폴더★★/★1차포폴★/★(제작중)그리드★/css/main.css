@@ -312,10 +312,9 @@ body::before {
     /*전체*/
     position: absolute;
     width: 170px;
-    height: 130px;
-    border: 1px solid red;
-    top: 25%;
-    left: -17.8%;
+    height: 145px;
+    top: 20%;
+    left: 0;
     font-size: 13px;
     color: #808080;
     display: block;

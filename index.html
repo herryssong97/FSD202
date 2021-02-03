@@ -3,17 +3,143 @@
 <head>
     <meta charset="euc-kr">
     <title>풀스택개발자 과정</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,500&display=swap');
+        /*font-family: 'Playfair Display', serif; >> 동그라미 내부글씨*/
+        @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@1,700&display=swap');
+        /*font-family: 'IBM Plex Sans', sans-serif; >> top글씨*/
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: #ffeaea;
+        }
+
+
+        /*상단영역*/
+        #top {
+            position: relative;
+            width: 100%;
+            text-align: center;
+        }
+
+        /*song hye ri*/
+        h1 {
+            color: #ef3c3c;
+            font-family: 'IBM Plex Sans', sans-serif;
+            font-size: 40px;
+        }
+
+        /*portfolio*/
+        h2 {
+            color: #11689a;
+            font-family: 'IBM Plex Sans', sans-serif;
+            font-size: 30px;
+        }
+
+        /************************************************************/
+
+
+        /*메뉴바*/
+        .gnb {
+            position: relative;
+            /*부모는 #top*/
+            top: 15%;
+            width: 100%;
+        }
+
+        .gnb ol {
+            list-style: none;
+        }
+        .gnb li{
+            position: absolute;
+            left: 50%;
+        }
+
+
+        /*앞에 있는애*/
+        .gnb li:nth-of-type(odd) {
+            float: left;
+            width: 200px;
+            height: 200px;
+            background-color: #11689a;
+            border-radius: 50%;
+            text-align: center;
+        }
+
+        /*뒤에 오는 애*/
+        .gnb li:nth-of-type(even) {
+            float: left;
+            width: 200px;
+            height: 200px;
+            background-color: #ef3c3c;
+            border-radius: 50%;
+            text-align: center;
+        }
+
+        .gnb li a {
+            position: relative;
+            color: #fff;
+            text-decoration: none;
+            top: 40%;
+            font-family: 'Playfair Display', serif;
+            font-size: 30px;
+        }
+
+        /*****************돌아가게하기*****************/
+        .gnb li:first-child {
+            transform: rotateY(90deg);
+            /*원상태로 돌아올때 트랜지션*/
+            transition: all .4s ease-in;
+            /*기다림없이 처음에 천천히*/
+        }
+
+        /*2.*/
+        .gnb:hover li:first-child {
+            transform: rotateY(0deg);
+            /*트랜지션-0.4초 기다림*/
+            transition: all .4s ease-out .4s;
+        }
+
+        /*3.*/
+        .gnb li:last-child {
+            /*원상태로 돌아올때 트랜지션*/
+            transition: all .4s ease-out .4s;
+            /*돌아올때는 기다렸다가 마지막에 천천히*/
+        }
+
+        /*4.*/
+        .gnb:hover li:last-child {
+            transform: rotateY(90deg);
+            /*트랜지션*/
+            transition: all .4s ease-in;
+        }
+    </style>
+
+
+
 </head>
+
 <body>
-   <h1>풀스택개발자 과정 소스</h1>
-    <h2>003.JS학습</h2>
-    <ol>
-        <li>
-            <a href="003.JS학습/JS001.html" target="_blank">JS001</a>
-        </li>
-    </ol>
-   
-   
-    
-</body>
-</html>
+    <header id="top">
+        <h1>Song Hye Ri</h1>
+        <h2>PORTFOLIO</h2>
+    </header>
+    <nav class="gnb">
+        <ol>
+            <li>
+                <a href="★★제출폴더★★/★1차포폴★/★(제작중)그리드★/w1150gs.html" target="_blank">click</a>
+            </li>
+            <li><a href="">
+                1st</a>
+            </li>
+        </ol>
+    </nav>
+
+
+
+</body></html>
