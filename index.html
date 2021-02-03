@@ -67,7 +67,6 @@
             float: left;
             width: 200px;
             height: 200px;
-            background-color: #11689a;
             border-radius: 50%;
             text-align: center;
         }
@@ -77,47 +76,59 @@
             float: left;
             width: 200px;
             height: 200px;
-            background-color: #ef3c3c;
             border-radius: 50%;
             text-align: center;
         }
 
+        /*앞에 있는애*/
+        .gnb li:nth-of-type(odd) a {
+            background-color: #11689a;
+        }
+
+        /*뒤에 오는 애*/
+        .gnb li:nth-of-type(even) a {
+            background-color: #ef3c3c;
+        }
+
         .gnb li a {
             position: relative;
+            display: block;
             color: #fff;
             text-decoration: none;
             width: 100%;
             height: 100%;
-            top: 40%;
+            top: 20%;
             font-family: 'Playfair Display', serif;
             font-size: 30px;
+            border-radius: 50%;
+            line-height: 200px;
         }
 
         /*****************돌아가게하기*****************/
-        .gnb li:first-child {
-            transform: rotateY(90deg);
+        .gnb li:first-child a{
+            transform:  rotateY(90deg);
             /*원상태로 돌아올때 트랜지션*/
             transition: all .4s ease-in;
             /*기다림없이 처음에 천천히*/
         }
 
         /*2.*/
-        .gnb:hover li:first-child {
-            transform: rotateY(0deg);
+        .gnb:hover li:first-child a{
+            transform:  rotateY(0deg);
             /*트랜지션-0.4초 기다림*/
             transition: all .4s ease-out .4s;
         }
 
         /*3.*/
-        .gnb li:last-child {
+        .gnb li:last-child a{
             /*원상태로 돌아올때 트랜지션*/
             transition: all .4s ease-out .4s;
             /*돌아올때는 기다렸다가 마지막에 천천히*/
         }
 
         /*4.*/
-        .gnb:hover li:last-child {
-            transform: rotateY(90deg);
+        .gnb:hover li:last-child a{
+            transform:  rotateY(90deg);
             /*트랜지션*/
             transition: all .4s ease-in;
         }
