@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="euc-kr">
     <title>풀스택개발자 과정</title>
@@ -55,23 +56,23 @@
         .gnb ol {
             list-style: none;
         }
-        .gnb li{
+
+        .gnb ol:first-child li {
+            /*이미지 두개 겹쳐보임*/
             position: absolute;
-            left: 50%;
+            left: 35%;
+            transform: translateX(-50%);
+        }
+
+        .gnb ol:nth-child(2) li {
+            /*이미지 두개 겹쳐보임*/
+            position: absolute;
+            left: 65%;
             transform: translateX(-50%);
         }
 
 
-        /*앞에 있는애*/
-        .gnb li:nth-of-type(odd) {
-            float: left;
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            text-align: center;
-        }
-
-        /*뒤에 오는 애*/
+        /*앞에 오는 애*/
         .gnb li:nth-of-type(even) {
             float: left;
             width: 200px;
@@ -80,14 +81,23 @@
             text-align: center;
         }
 
-        /*앞에 있는애*/
-        .gnb li:nth-of-type(odd) a {
-            background-color: #11689a;
+        /*뒤에 있는애*/
+        .gnb li:nth-of-type(odd) {
+            float: left;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            text-align: center;
         }
 
-        /*뒤에 오는 애*/
+        /*앞에 오는 애*/
         .gnb li:nth-of-type(even) a {
             background-color: #ef3c3c;
+        }
+
+        /*뒤에 있는애*/
+        .gnb li:nth-of-type(odd) a {
+            background-color: #11689a;
         }
 
         .gnb li a {
@@ -105,33 +115,67 @@
         }
 
         /*****************돌아가게하기*****************/
-        .gnb li:first-child a{
-            transform:  rotateY(90deg);
+        #gnb1 li:first-child a {
+            transform: rotateY(90deg);
             /*원상태로 돌아올때 트랜지션*/
             transition: all .4s ease-in;
             /*기다림없이 처음에 천천히*/
         }
 
         /*2.*/
-        .gnb:hover li:first-child a{
-            transform:  rotateY(0deg);
+        #gnb1:hover li:first-child a {
+            transform: rotateY(0deg);
             /*트랜지션-0.4초 기다림*/
             transition: all .4s ease-out .4s;
         }
 
         /*3.*/
-        .gnb li:last-child a{
+        #gnb1 li:last-child a {
             /*원상태로 돌아올때 트랜지션*/
             transition: all .4s ease-out .4s;
             /*돌아올때는 기다렸다가 마지막에 천천히*/
         }
 
         /*4.*/
-        .gnb:hover li:last-child a{
-            transform:  rotateY(90deg);
+        #gnb1:hover li:last-child a {
+            transform: rotateY(90deg);
             /*트랜지션*/
             transition: all .4s ease-in;
         }
+
+        /*****************돌아가게하기*****************/
+
+        /*****************돌아가게하기2*****************/
+        #gnb2 li:first-child a {
+            transform: rotateY(90deg);
+            /*원상태로 돌아올때 트랜지션*/
+            transition: all .4s ease-in;
+            /*기다림없이 처음에 천천히*/
+        }
+
+        /*2.*/
+        #gnb2:hover li:first-child a {
+            transform: rotateY(0deg);
+            /*트랜지션-0.4초 기다림*/
+            transition: all .4s ease-out .4s;
+        }
+
+        /*3.*/
+        #gnb2 li:last-child a {
+            /*원상태로 돌아올때 트랜지션*/
+            transition: all .4s ease-out .4s;
+            /*돌아올때는 기다렸다가 마지막에 천천히*/
+        }
+
+        /*4.*/
+        #gnb2:hover li:last-child a {
+            transform: rotateY(90deg);
+            /*트랜지션*/
+            transition: all .4s ease-in;
+        }
+
+        /*****************돌아가게하기2*****************/
+
     </style>
 
 
@@ -144,16 +188,28 @@
         <h2>PORTFOLIO</h2>
     </header>
     <nav class="gnb">
-        <ol>
+        <ol id="gnb1">
             <li>
                 <a href="★★제출폴더★★/★1차포폴★/★(제작중)그리드★/w1150gs.html" target="_blank">click</a>
             </li>
-            <li><a href="">
-                1st</a>
+            <li>
+                <a href="">
+                    1st</a>
+            </li>
+        </ol>
+        <ol id="gnb2">
+            <li>
+                <a href="★★제출폴더★★/★1차포폴★/★(제작중)그리드★/w1150gs.html" target="_blank">click</a>
+            </li>
+            <li>
+                <a href="">
+                    2st</a>
             </li>
         </ol>
     </nav>
 
 
 
-</body></html>
+</body>
+
+</html>
