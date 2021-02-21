@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>혜리 포트폴리오 intro (nav03) </title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <style>
+       
+        
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #fcf0ec;
+        }
+        
+        body{
+            overflow: hidden;
+        }
+
+        /*GNB메뉴*/
+        /*GNB 디자인*/
+        .gnb {
+            position: fixed;
+            display: block;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            /*margin: 0 auto;*/
+            /*★★파란 메뉴박스가 전체화면의 중앙 하단에 위치하게 하고싶은데ㅜㅜ*/
+            /*부모자격 - .gnb>ul가상요소 before의 부모*/
+            background-color: #0f5f94;
+            z-index: 10;
+            height: 5%;
+            width: 80%;
+            
+            overflow: hidden;
+            
+            transition: .8s;
+            
+        }
+
+        /*.gnb>ul에 마우스 오버시 하위메뉴 배경판 보이기*/
+        /*.gnb>ul:hover::before {
+            height: 200px;
+        }*/
+        
+        /*마우스오버시*/
+        .gnb:hover{
+/*            transition: transform .4s ease-in-out;*/
+        }
+
+        .gnb>ul {
+            position: relative;
+            top: 50%;
+/*            transform: translateY(-50%);*/
+            width: 80%;
+            margin: 0 auto;
+            /*마영오-블록가로중앙
+            (가로크기가 화면보다 작아야함!)*/
+            list-style: none;
+            transition: .8s;
+            
+        }
+
+        .gnb:hover {
+            height: 95%;
+        }
+        .gnb:hover>ul {
+            transform: translateY(-50%);
+        }
+
+
+        .gnb>ul>li {
+            text-align: center;
+            font-size: 30px;
+            line-height: 100px;
+            color: #fff;
+            font-family: 'Lobster', cursive;
+/*            outline: 2px solid red;*/
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="gnb">
+        <ul>
+            <li>Portfolio1</li>
+            <li>Portfolio2</li>
+            <li>Portfolio3</li>
+            <li>Portfolio4</li>
+            <li>Portfolio5</li>
+        </ul>
+    </nav>
+
+</body></html>

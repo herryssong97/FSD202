@@ -1,0 +1,23 @@
+@charset "utf-8";
+/* 한국은행|화폐박물관페이지 CSS - core.css 웹폰트,전체설정*/
+
+/*웹폰트*/
+
+
+
+
+
+/*공통*/
+html,
+body,
+h1,
+h2 {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+
+
+/*공통class*/
