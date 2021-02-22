@@ -9,6 +9,25 @@
 }
 
 
+/*공통 class*/
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    /*한페이지를 채우는 .page를 위해
+            높이값 100% 보이는화면 기준을 꼭해야함!*/
+    overflow: hidden;
+    /*스크롤바 없애기(스크롤안됨!)*/
+}
+
+/*공통 class*/
+.ibx {
+    width: 1250px;
+    margin: 0 auto;
+}
+
 
 /*** header ***/
 
@@ -21,28 +40,52 @@
 }
 
 .t2 {
-    height: 20px;
+    height:35px;
 }
 
 /*** section ***/
 
-.page {
+.pg1 {
     padding-top: 200px;
 }
 
+.pg2{
+    padding-top: 170px;
+}
+
+/*2. 컨텐츠 영역1*/
+.c1{
+    height: 30px;
+}
 .c2 {
     height: 200px;
 }
 
-/*** footer ***/
-
-.bnav {
-    padding-bottom: 55px;
+/*2. 컨텐츠 영역2*/
+.c11{
+    height: 30px;
+}
+.c12{
+    height: 200px;
+}
+.c13{
+    height: 60px;
 }
 
+/*** footer ***/
+
+.bnav {}
+
+/*페이지전체 싸는 박스*/
+.wrap {
+    display: flex;
+    width: 500%;
+    height: 100%;
+}
 
 /*페이지 공통 class*/
 .page {
-    width: 100%;
-    height: 68%;
+    /*???*/
+    width: 20%;
+    height: 100%;
 }

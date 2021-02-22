@@ -30,7 +30,7 @@
 /*"col-"로된 class명만 float:left 설정하기*/
 [class*="col-"] {
   float: left;
-  padding: 15px;
+  /*padding: 15px;*/
   box-sizing: border-box;
   border: 1px solid red;
 }
