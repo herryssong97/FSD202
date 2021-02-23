@@ -9,6 +9,9 @@
 @import url(core.css);
 @import url(common.css);
 
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&display=swap');
+/*font-family: 'Cormorant Garamond', serif;*/
+
 body {
     position: relative;
 }
@@ -28,17 +31,53 @@ body {
 
 #top .t1 img {
     width: 175px;
-    padding-left: 21px;
+    padding-left: 4vw;
 }
 
-#top .t2 li {
+#top .nav{
+    position: relative;
+}
+
+#top .nav li {
     /*상단영역 메뉴바*/
     padding-top: 3px;
     font-size: 17px;
-    left: -2px;
+    padding-left: 10.3vw;
+    white-space: nowrap;
 }
-#top .t2 li+li{
+
+#top .nav li+li{
     padding-left: 72px;
+}
+
+#top .login{
+    padding: 8px 2px 2px 75px;
+}
+
+#top .lang{
+    padding: 8px 2px 2px 25px;
+}
+
+/*컨텐츠영역*/
+.page li{
+    color: #f00;
+}
+
+.page .tit1{
+    text-align:center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-weight: normal;
+    letter-spacing: 0.2em;
+    width: 100%;
+}
+
+.page .tit2{
+    text-align:center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 80px;
+    letter-spacing: 0.1em;
+    width: 100%;
 }
 
 
@@ -47,9 +86,7 @@ body {
     position: fixed;
     /*하단고정*/
     width: 15%;
-    bottom: 10%;
     z-index: 9999;
-    padding-left: 44px;
 }
 
 .bnav li {
@@ -70,31 +107,31 @@ body {
 
 
 #cont1 {
-    background-image: url(../images/main_cap1.png);
+    background-image: url(../images/main_cap12.png);
     background-repeat: no-repeat;
     background-position: center top;
 }
 
 #cont2 {
-    background-image: url(../images/main_cap2.png);
+    background-image: url(../images/main_cap22.png);
     background-repeat: no-repeat;
     background-position: center top;
 }
 
 #cont3 {
-    background-image: url(../images/main_cap3.png);
+    background-image: url(../images/main_cap33.png);
     background-repeat: no-repeat;
     background-position: center top;
 }
 
 #cont4 {
-    background-image: url(../images/main_cap4.png);
+    background-image: url(../images/main_cap44.png);
     background-repeat: no-repeat;
     background-position: center top;
 }
 
 #cont5 {
-    background-image: url(../images/main_cap5.png);
+    background-image: url(../images/main_cap55.png);
     background-repeat: no-repeat;
     background-position: center top;
 }
