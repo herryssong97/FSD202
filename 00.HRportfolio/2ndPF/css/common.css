@@ -24,7 +24,7 @@ body {
 
 /*공통 class*/
 .ibx {
-    width: 1250px;
+    width: 100%;
     margin: 0 auto;
 }
 
@@ -32,7 +32,7 @@ body {
 /*** header ***/
 
 #top {
-    padding-top: 60px;
+    padding-top: 3vw;
 }
 
 .t1 {
@@ -40,41 +40,47 @@ body {
 }
 
 .t2 {
-    height:35px;
+    height: 35px;
 }
 
 /*** section ***/
 
 .pg1 {
-    padding-top: 200px;
+    padding-top: 19vw;
 }
 
-.pg2{
-    padding-top: 170px;
+.pg2 {
+    padding-top: 17vw;
 }
 
 /*2. 컨텐츠 영역1*/
-.c1{
+.c1 {
     height: 30px;
 }
+
 .c2 {
     height: 200px;
 }
 
 /*2. 컨텐츠 영역2*/
-.c11{
+.c11 {
     height: 30px;
 }
-.c12{
+
+.c12 {
     height: 200px;
 }
-.c13{
+
+.c13 {
     height: 60px;
 }
 
 /*** footer ***/
 
-.bnav {}
+.bnav {
+    bottom: 3.4vw;
+    padding-left: 5.3vw;
+}
 
 /*페이지전체 싸는 박스*/
 .wrap {
