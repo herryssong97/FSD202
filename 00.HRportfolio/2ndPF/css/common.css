@@ -8,7 +8,6 @@
     display: none;
 }
 
-
 /*공통 class*/
 html,
 body {
@@ -24,6 +23,7 @@ body {
 
 /*공통 class*/
 .ibx {
+    position: relative;
     width: 100%;
     margin: 0 auto;
 }
@@ -32,7 +32,7 @@ body {
 /*** header ***/
 
 #top {
-    padding-top: 3vw;
+    padding-top: 5%;
 }
 
 .t1 {
@@ -46,11 +46,11 @@ body {
 /*** section ***/
 
 .pg1 {
-    padding-top: 19vw;
+    padding-top: 200px;
 }
 
 .pg2 {
-    padding-top: 17vw;
+    padding-top: 170px;
 }
 
 /*2. 컨텐츠 영역1*/
@@ -59,27 +59,32 @@ body {
 }
 
 .c2 {
+    padding-top: 15px;
     height: 200px;
+    line-height: 80px;
 }
 
-/*2. 컨텐츠 영역2*/
+/*2. 컨텐츠 영역2~5*/
 .c11 {
     height: 30px;
 }
 
 .c12 {
+    padding-top: 15px;
     height: 200px;
+    line-height: 80px;
 }
 
+/*2. 컨텐츠 영역 버튼*/
 .c13 {
+    padding-top: 5px;
     height: 60px;
 }
 
 /*** footer ***/
 
 .bnav {
-    bottom: 3.4vw;
-    padding-left: 5.3vw;
+    bottom: 10%;
 }
 
 /*페이지전체 싸는 박스*/
@@ -91,7 +96,6 @@ body {
 
 /*페이지 공통 class*/
 .page {
-    /*???*/
     width: 20%;
     height: 100%;
 }

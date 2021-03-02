@@ -1,0 +1,198 @@
+@charset "utf-8";
+/* 덕신사 미디어쿼리 - media.css */
+
+/*
+    max-width를 사용할 경우 큰 사이즈에서 작은 사이즈 순으로
+    아래쪽으로 내려가면서 코딩해야한다!
+    (미디어쿼리는 같은 선택자일 경우 덮어쓰기로 적용되기 때문이다)
+*/
+
+/*1280px 이하 사이즈 부터767px는 전체 고정임*/
+@media only screen and (max-width:1200px) {
+
+    /*전체글자 사이즈 조정
+    글자크기 등을 모두 rem으로 구현했으므로
+    html요소의 글자크기만 변경하면 모두 조정된다!*/
+
+    html {
+        font-size: 2px;
+    }
+
+    #top {
+        width: 1200px;
+        display: block;
+    }
+
+    .tit1 {
+        width: 1200px;
+        display: block;
+    }
+
+    .tit2 {
+        width: 1200px;
+        display: block;
+    }
+
+}
+
+/*1280px 이하 미디어쿼리*/
+
+/*767px 이하 사이즈*/
+@media only screen and (max-width:767px) {
+
+    /*1. 전체글자 사이즈 조정
+    글자크기 등을 모두 rem으로 구현했으므로
+    html요소의 글자크기만 변경하면 모두 조정된다!*/
+
+    html {
+        font-size: 1px;
+        /*font-size: 12px;*/
+        /*기본은 16px인데 작아짐*/
+        /*예) 메뉴인 경우 1.25rem 으로 설정되었으므로
+            12px * 1.25 = 15px*/
+    }
+
+
+
+    /*2. 로고이미지 변경하기*/
+
+    #top{
+    }
+    
+    #top .hlogo {
+        width: 130px;
+        padding-left: 20%;
+    }
+
+    #top .nav > li {
+        display: none;
+    }
+
+    .login {
+        display: none;
+    }
+
+    .lang {
+        display: none;
+    }
+
+    #top .ham img {
+        display: block;
+    }
+
+    /*상단1페이지*/
+    .tit1 {
+        padding-top: 45px;
+    }
+
+    .tit2 {
+        padding-top: 45px;
+        height: 35px;
+        line-height: 50px;
+    }
+
+    /*상단2~5페이지*/
+    .tit3 {
+        padding-top: 60px;
+        height: 45px;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .tit4 {
+        padding-top: 50px;
+        height: 35px;
+        line-height: 50px;
+    }
+
+    /*하단버튼*/
+    .btn {
+        margin-top: -20px;
+    }
+
+    .btn a {
+        font-size: 14px;
+        line-height: 38px;
+        cursor: pointer;
+    }
+
+    .btn:hover {
+        font-size: 14px;
+        line-height: 38px;
+        color: #333;
+        cursor: pointer;
+    }
+
+    /*하단 블릿박스*/
+    .bnav {
+        width: auto;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 0;
+    }
+
+
+
+}
+
+/*767px 이하 미디어쿼리*/
+
+/*500px 이하 사이즈*/
+@media only screen and (max-width:500px) {
+
+    /*1.글자크기변경*/
+    html {
+        font-size: 1px;
+    }
+
+    /*2.모바일사이즈 가로스크롤 없애기*/
+    html,
+    body {/*
+        width: 100%;
+        overflow-x: hidden;*/
+    }
+
+
+
+    
+
+    /*5. 컨텐츠 영역의 col-로 된 파티션 class의 
+    width값을 100%로 변경+패딩없애기*/
+    .cont [class*="col-"] {
+        width: 100%;
+        padding: 0;
+    }
+
+    /*6. 컨텐츠 영역의 비율유지설정을 없앤다!*/
+    .rbx2::before {
+        display: none;
+    }
+
+    /*7. 컨텐츠 영역의 비율유지 속박스의 
+    position을 static처리*/
+    .cont .ibx {
+        position: static;
+    }
+
+    /*8. 메뉴배너의 li 가로크기를 100%로 변경, 
+    높이값 설정+패딩없애기*/
+    #mban li,
+    #mban li:last-child {
+        width: 100%;
+        height: 260px;
+        padding: 0;
+    }
+
+    /*9. 배너 비율변경하기*/
+    /*.rbx::before {
+        padding-top: 58%;
+    }
+*/
+  
+
+
+
+
+}
+
+/*500px 이하 미디어쿼리*/
