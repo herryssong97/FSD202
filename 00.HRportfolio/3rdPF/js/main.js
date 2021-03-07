@@ -9,12 +9,28 @@ $(document).ready(function(){
     
     
     
-    $("header nav ul.gnb li.ssub").click(function(){
-        $(this).find("ul.sub").show;
+    $("header nav ul.gnb li.ssub>a").click(function(){
+        $(this).find("ul.sub>li").stop().show;
     },function(){
-        $(this).find("ul.sub").hide;
+        $(this).find("ul.sub>li").stop().hide;
     }); /////// kr클릭시 중국어 튀어나오게 ?? 왜 안되지
     
+    
+    
+   /* $("header .ssub>li>a").click(function(){
+        $(".sub>li>a").toggle();
+    });*/ ///// kr클릭시 중국어 튀어나오게 ?? 왜 안되지
+    
+    
+    
+    $(".ham img").click(function(){
+        $("#mob").stop().show();
+    }); ////// click ////////////////
+    
+    
+    $("#mob .mxlogo").click(function(){
+        $("#mob").stop().hide();
+    });
     
     
 }); // ready end

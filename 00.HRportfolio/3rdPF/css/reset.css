@@ -23,6 +23,7 @@ ul{
 }
 li{
     color: #fff;
+    list-style: none;
 }
 a{
     color: inherit;
