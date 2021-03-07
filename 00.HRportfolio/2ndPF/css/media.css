@@ -46,13 +46,7 @@
 
     html {
         font-size: 1px;
-        /*font-size: 12px;*/
-        /*기본은 16px인데 작아짐*/
-        /*예) 메뉴인 경우 1.25rem 으로 설정되었으므로
-            12px * 1.25 = 15px*/
     }
-
-
 
     /*2. 로고이미지 변경하기*/
 
@@ -89,6 +83,14 @@
         padding-top: 45px;
         height: 35px;
         line-height: 50px;
+    }
+    
+    .br1{
+        display: inline;
+    }
+    
+    .br2{
+        display: none;
     }
 
     /*상단2~5페이지*/

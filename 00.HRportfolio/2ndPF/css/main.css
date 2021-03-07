@@ -114,6 +114,10 @@ body {
     letter-spacing: 0.1em;
 }
 
+.br1{
+    display: none;
+}
+
 /*2~5페이지 중앙 작은제목*/
 .page .tit3 {
     width: 100%;
