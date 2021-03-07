@@ -1,0 +1,319 @@
+@charset "utf-8";
+/*main.css*/
+
+@import url(reset.css);
+/**********************/
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&display=swap');
+/*font-family: 'Cormorant Garamond', serif;*/
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500&display=swap');
+/*font-family: 'Open Sans', sans-serif;*/
+/**********************/
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.wrap {
+    display: flex;
+    width: 500vw;
+    height: 100vh;
+}
+
+header {
+    position: fixed;
+    width: 100vw;
+    height: 150px;
+    /*background: #aaa;*/
+    z-index: 10;
+}
+
+header h1 {
+    position: absolute;
+    width: 170px;
+    top: 50%;
+    left: 5%;
+    transform: translateY(-50%);
+}
+
+header h1 img {
+    width: 100%;
+}
+
+/*********/
+header nav {
+    position: absolute;
+    float: right;
+    width: 1000px;
+    top: 40%;
+    right: 2%;
+
+    /*border: 1px dotted yellow;*/
+}
+
+header nav ul.gnb {
+    width: 100%;
+    text-align: center;
+}
+
+header nav ul.gnb > li {
+    width: 14%;
+    float: left;
+    font-size: 18px;
+    font-family: 'Noto Serif KR', serif;
+}
+
+header nav ul.gnb .ssub {
+    font-family: 'Cormorant Garamond', serif;
+}
+
+header nav ul.gnb .msub {
+    padding-right: 5px;
+}
+
+header nav ul.gnb .msub>a{
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+header nav ul.gnb .msub>a:hover{
+    font-weight: bold;
+}
+
+header nav ul.gnb > li:nth-child(5) {
+    padding-right: 50px;
+}
+
+header nav ul.gnb .ssub {
+    width: 100px;
+}
+header nav ul.gnb .ssub>a{
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/*마우스 오버시 펼쳐지는 하단메뉴*/
+header nav ul.gnb .msub .sub {
+    margin-top: 10px;
+    border-radius: 25px 0;
+    background-color: #fff;
+    /*border: 1px solid lime;*/
+    display: none;
+}
+header nav ul.gnb .msub .sub li{
+    color: #666;
+    font-size: 16px;
+    line-height: 40px;
+}
+
+header nav ul.gnb .msub .sub li:first-child{
+    padding-top: 10px;
+}
+header nav ul.gnb .msub .sub li:last-child{
+    padding-bottom: 10px;
+}
+
+header nav ul.gnb .msub .sub li:hover{
+    color: #333;
+    font-weight: bold;
+}
+
+/*중문*/
+header nav ul.gnb .ssub li{
+    padding-top: 10px;
+    display: none;
+}
+
+.ham img{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    display: block;
+    top: 0;
+    right: 3%;
+    
+    display: none;
+}
+
+/*********/
+
+#slide {
+    display: flex;
+    width: 500vw;
+    height: 100vh;
+}
+
+#slide .page {
+    position: relative;
+    display: flex;
+    width: 20%;
+    height: 100%;
+}
+
+#slide .page .con1{
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+    height: 300px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    
+    justify-content: center;
+    align-items: center;
+    
+    display: flex;
+    /*border: 1px solid red;*/
+}
+
+#slide .page .con2,
+#slide .page .con3,
+#slide .page .con4,
+#slide .page .con5{
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+    height: 300px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    
+    justify-content: center;
+    align-items: center;
+    
+    display: flex;
+    /*border: 1px solid orange;*/
+}
+
+/*첫페이지 ONE OF A <br class="br1">*/
+.br1{
+    display: none;
+}
+
+/*상단 작은제목*/
+#slide .page ul li:first-child{
+    position: absolute;
+    display: inline;
+    text-align: center;
+    width: 100%;
+    font-size: 18px;
+    font-family: 'Cormorant Garamond', serif;
+    /*padding-bottom: 18%;*/
+    top: 15px;
+    letter-spacing: 0.2em;
+}
+
+/*상단 큰제목*/
+#slide .page ul li:nth-child(2){
+    position: absolute;
+    display: inline;
+    text-align: center;
+    width: 100%;
+    font-size: 80px;
+    font-family: 'Cormorant Garamond', serif;
+    letter-spacing: 0.1em;
+}
+
+/*컨텐츠 밑 버튼*/
+.page .btn {
+    position: absolute;
+    /*margin-top: 20%;*/
+    bottom: 0;
+    width: 260px;
+    height: 38px;
+    text-align: center;
+    font-weight: bold;
+    
+    font: bold 18px/38px "맑은 고딕";
+    /*font: 스두크줄체 스타일 두께 크기 */
+    letter-spacing: 0.1em;
+    border: 1px solid #fff;
+    border-radius: 40px;
+}
+
+/*버튼에 마우스 오버시*/
+.page .btn:hover {
+    background-color: #fff;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.page .btn:hover a {
+    color: #333;
+    /*font: bold 1.000em/2.2 "맑은 고딕";*/
+    letter-spacing: 0.1em;
+    cursor: pointer;
+}
+
+/***********/
+
+footer {
+    position: fixed;
+    width: 100%;
+    height: 80px;
+    bottom: 0;
+    z-index: 10;
+    /*background: #ccc;*/
+}
+
+/*하단블릿영역*/
+
+/*블릿박스*/
+.bnav {
+    position: absolute;
+    margin-left: 5%;
+    width: 100%;
+    height: 20px;
+    z-index: 1;
+    /*border: 1px solid lime;*/
+}
+
+.bnav > li {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    float: left;
+    margin: 0 4px;
+    background-color: transparent;
+    border: 1px solid #fff;
+    list-style: none;
+}
+
+.bnav a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+/*선택블릿on*/
+.bnav li.on {
+    background-color: #fff;
+    opacity: 1;
+}
+
+
+/***********/
+
+
+#cont1 {
+    background: url(../images/bg1.jpg) no-repeat top/cover;
+}
+
+#cont2 {
+    background: url(../images/bg2.jpg) no-repeat top/cover;
+}
+
+#cont3 {
+    background: url(../images/bg3.jpg) no-repeat top/cover;
+}
+
+#cont4 {
+    background: url(../images/bg4.jpg) no-repeat top/cover;
+}
+
+#cont5 {
+    background: url(../images/bg5.jpg) no-repeat top/cover;
+}
