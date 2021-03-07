@@ -46,8 +46,19 @@
 
     html {
         font-size: 1px;
+<<<<<<< Updated upstream
     }
 
+=======
+        /*font-size: 12px;*/
+        /*기본은 16px인데 작아짐*/
+        /*예) 메뉴인 경우 1.25rem 으로 설정되었으므로
+            12px * 1.25 = 15px*/
+    }
+
+
+
+>>>>>>> Stashed changes
     /*2. 로고이미지 변경하기*/
 
     #top{
@@ -84,6 +95,7 @@
         height: 35px;
         line-height: 50px;
     }
+<<<<<<< Updated upstream
     
     .br1{
         display: inline;
@@ -92,6 +104,8 @@
     .br2{
         display: none;
     }
+=======
+>>>>>>> Stashed changes
 
     /*상단2~5페이지*/
     .tit3 {

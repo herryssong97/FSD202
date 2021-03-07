@@ -112,6 +112,7 @@ body {
     font-family: 'Cormorant Garamond', serif;
     font-size: 40rem;
     letter-spacing: 0.1em;
+<<<<<<< Updated upstream
 }
 
 .br1{
@@ -137,6 +138,29 @@ body {
     letter-spacing: 0.1em;
 }
 
+=======
+}
+
+/*2~5페이지 중앙 작은제목*/
+.page .tit3 {
+    width: 100%;
+    text-align: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 9rem;
+    font-weight: normal;
+    letter-spacing: 0.2em;
+}
+
+/*2~5페이지 중앙 큰제목*/
+.page .tit4 {
+    width: 100%;
+    text-align: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 40rem;
+    letter-spacing: 0.1em;
+}
+
+>>>>>>> Stashed changes
 /*컨텐츠 밑 버튼*/
 .page .btn {
     position: relative;
