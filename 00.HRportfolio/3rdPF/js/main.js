@@ -1,18 +1,18 @@
 $(document).ready(function(){
     
     $("header nav ul.gnb>li").hover(function(){
-        $(this).find("ul.sub").stop().show();
+        $(this).find("ul.sub").show();
     },function(){
-        $(this).find("ul.sub").stop().hide();        
+        $(this).find("ul.sub").hide();        
     }); //////// 메인메뉴바 클릭시 하단에 메뉴 바 펼쳐지게
     
     
     
     
-    $("header nav ul.gnb li.ssub>a").click(function(){
-        $(this).find("ul.sub>li").stop().show;
-    },function(){
-        $(this).find("ul.sub>li").stop().hide;
+    $("header nav ul.gnb li.ssub>a").click(function(e){
+        e.preventDefault();
+        $(this).next().find("li").toggle();
+        
     }); /////// kr클릭시 중국어 튀어나오게 ?? 왜 안되지
     
     

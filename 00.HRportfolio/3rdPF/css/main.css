@@ -23,6 +23,7 @@
 
 header {
     position: fixed;
+    /*min-width: 1280px; 미디어쿼리에 안하고 이거해도 됨*/
     width: 100vw;
     height: 150px;
     /*background: #aaa;*/
@@ -215,6 +216,7 @@ header nav ul.gnb .ssub li {
 
 #mob {
     position: fixed;
+    max-width: 600px;
     z-index: 100;
     top: 0;
     left: 0;
@@ -258,6 +260,11 @@ header nav ul.gnb .ssub li {
     width: 100%;
     height: 100%;
 }
+.mp > ol{    
+    margin-left: 50%;
+    margin-top: -30px;
+    padding-bottom: 5px;
+}
 
 #mob .mcon > ul.mnav > li {
     width: 100%;
@@ -291,6 +298,7 @@ header nav ul.gnb .ssub li {
     color: #666;
     font: bold 16px "맑은 고딕";
 }
+
 
 /*모바일하단*/
 #mob .mbwrap{
