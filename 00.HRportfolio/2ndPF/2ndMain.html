@@ -1,226 +1,211 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
-    <title>2nd Songhyeri's Portfolio</title>
+    <title>덕신사 포트폴리오</title>
     <!--http://www.deoksin.com/html/00_main/-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/media.css">
-    
+
     <script src="js/jquery-1.7.2.min.js"></script>
     <script src="js/jquery-ui.min.js"></script>
     <script src="js/autoscroll_Horizontal.js"></script>
+    <script src="js/jquery-touch-punch.min.js"></script>
+    <script src="js/main.js"></script>
 </head>
 
 <body>
 
-    <!--0. 상단 메뉴 영역-->
-    <div id="top">
-        <header class="clb ibx">
-            <h1 class="dn">메인로고, 메뉴바, 로그인</h1>
-            <div class="col-2 t1">
-                <img class="hlogo" src="images/Hlogo.png" alt="헤드로고">
+
+    <div class="container">
+        <!--상단메뉴-->
+        <header>
+            <div id="top">
+                <h1>
+                    <img src="images/Hlogo.png" alt="헤드로고">
+                </h1>
+                <nav>
+                    <ul class="gnb">
+                        <li class="msub">
+                            <a href="#">회사소개</a>
+                            <ul class="sub">
+                                <li><a href="#">인사말</a></li>
+                                <li><a href="#">연혁</a></li>
+                                <li><a href="#">경영이념</a></li>
+                                <li><a href="#">CI</a></li>
+                                <li><a href="#">오시는 길</a></li>
+                            </ul>
+                        </li>
+                        <li class="msub">
+                            <a href="#">사업소개</a>
+                        </li>
+                        <li class="msub">
+                            <a href="#">제품</a>
+                            <ul class="sub">
+                                <li><a href="#">신제품 소개</a></li>
+                                <li><a href="#">62th 종합지</a></li>
+                                <li><a href="#">단종</a></li>
+                            </ul>
+                        </li>
+                        <li class="msub">
+                            <a href="#">사업실적</a>
+                        </li>
+                        <li class="msub">
+                            <a href="#">공지사항</a>
+                        </li>
+                        <li class="ssub">
+                            <a href="#">LOGIN</a>
+                        </li>
+                        <li class="ssub">
+                            <a href="#">KR∨</a>
+                            <ul class="sub">
+                                <li><a href="#">中文</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
             </div>
-            <div class="col-1 t2 mlogo">
-                <!--햄버거버튼-->
-                <div class="ham">
-                    <img src="images/hamlogo.png" alt="">
-                </div>
+            <li class="ham">
+                <img src="images/hamlogo.png" alt="햄로고">
+            </li>
+        </header>
+
+        <!--모바일용 박스-->
+        <div id="mob">
+            <div class="mtop">
+                <h1>
+                    <img class="mhlogo" src="images/Hlogo2.png" alt="헤드로고">
+                </h1>
+                <h2>
+                    <img class="mxlogo" src="images/xlogo.png" alt="x로고">
+                </h2>
             </div>
-            <div class="col-6 t2">
-                <ul class="nav">
-                    <li><a href="">회사소개</a></li>
+            <div class="mcon">
+                <ul class="mnav">
+                    <li class="mp">
+                        <a href="#">회사소개</a>
+                        <ol class="msub">
+                            <li><a href="#">·&nbsp;&nbsp;&nbsp;인사말</a></li>
+                            <li><a href="#">·&nbsp;&nbsp;&nbsp;연혁</a></li>
+                            <li><a href="#">·&nbsp;&nbsp;&nbsp;경영이념</a></li>
+                            <li><a href="#">·&nbsp;&nbsp;&nbsp;CI</a></li>
+                            <li><a href="#">·&nbsp;&nbsp;&nbsp;오시는 길</a></li>
+                        </ol>
+                    </li>
                     <li><a href="">사업소개</a></li>
-                    <li><a href="">제품</a></li>
+                    <li class="mp">
+                        <a href="#">제품</a>
+                        <ol class="msub">
+                            <li><a href="#">·&nbsp;&nbsp;&nbsp;신제품 소개</a></li>
+                            <li><a href="#">·&nbsp;&nbsp;&nbsp;62th 종합지</a></li>
+                            <li><a href="#">·&nbsp;&nbsp;&nbsp;단종</a></li>
+                        </ol>
+                    </li>
                     <li><a href="">사업실적</a></li>
                     <li><a href="">공지사항</a></li>
                 </ul>
+                
             </div>
-            <div class="col-1 t2 bl"></div>
-            <div class="col-1 t2">
-                <span>
-                    <li class="login">
-                        <a href="">LOGIN</a>
-                    </li>
-                </span>
-            </div>
-            <div class="col-1 t2">
-                <span>
-                    <li class="lang">
-                        <a href="">KR ∨</a>
-                    </li>
-                </span>
-            </div>
-        </header>
-    </div>
-    <!--1. 컨텐츠 영역1-->
-    <div class="wrap">
-        <div id="cont1" class="page pg1">
-            <section class="clb ibx">
-                <h2 class="dn">
-                    1. INTRODUCE / ONE OF A KIND JEWELRY</h2>
-                <div class="col-5 c1"></div>
-                <div class="col-2 c1">
-                    <li class="tit1">
-                        INTRODUCE
-                    </li>
+
+                <div class="mbwrap">
+                    <div class="mbtm">
+                        <ul>
+                            <li><a href="#">LOGIN</a></li>
+                            <li><a href="#">KR</a></li>
+                            <li><a href="#">中文</a></li>
+                        </ul>
+                    </div>
+                    <div class="mbtm2">
+                        <ul>
+                            <li><a href="#">이용약관</a></li>
+                            <li><a href="#">개인정보처리방침</a></li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="col-5 c1"></div>
-                <div class="col-3 c2">
-                </div>
-                <div class="col-6 c2">
-                    <li class="tit2">
-                        ONE OF A KIND <br>
+
+        </div>
+
+        <!--컨텐츠-->
+        <section id="slide">
+            <div id="cont1" class="page">
+                <ul class="con1">
+                    <li class="tit1">INTRODUCE</li>
+                    <li class="tit2">ONE OF A <br class="br1">
+                        KIND <br class="br2">
                         JEWELRY
                     </li>
-                </div>
-                <div class="col-3 c2"></div>
-            </section>
-        </div>
-        <!--2. 컨텐츠 영역2-->
-        <div id="cont2" class="page pg2">
-            <section class="clb ibx">
-                <h2 class="dn">
-                    2. TOTAL GOLD JEWELRY BRAND / DEOKSIN COMPANY</h2>
-                <div class="col-4 c11"></div>
-                <div class="col-4 c11">
-                    <li class="tit3">
-                        TOTAL GOLD JEWELRY BRAND</li>
-                </div>
-                <div class="col-4 c11"></div>
-                <div class="col-3 c12"></div>
-                <div class="col-6 c12">
-                    <li class="tit4">
-                        DEOKSIN <br>
+                </ul>
+            </div>
+            <div id="cont2" class="page">
+                <ul class="con2">
+                    <li class="tit1">TOTAL GOLD JEWELRY BRAND</li>
+                    <li class="tit2">DEOKSIN <br>
                         COMPANY</li>
-                </div>
-                <div class="col-3 c12"></div>
-                <div class="col-5 c13"></div>
-                <div class="col-2 c13">
                     <li class="btn">
-                        <a href="">회사 소개</a>
+                        <a href="">
+                            회사 소개</a>
                     </li>
-                </div>
-                <div class="col-5 c13"></div>
-
-            </section>
-        </div>
-        <!--3. 컨텐츠 영역3-->
-        <div id="cont3" class="page pg2">
-            <section class="clb ibx">
-                <h2 class="dn">3. EXPERIENCE / ESPECIAL PRODUCT</h2>
-                <div class="col-5 c1"></div>
-                <div class="col-2 c1">
-                    <li class="tit3">
-                        EXPERIENCE</li>
-                </div>
-                <div class="col-5 c1"></div>
-                <div class="col-3 c12"></div>
-                <div class="col-6 c12">
-                    <li class="tit4">
-                        ESPECIAL <br>
+                </ul>
+            </div>
+            <div id="cont3" class="page">
+                <ul class="con3">
+                    <li class="tit1">EXPERIENCE</li>
+                    <li class="tit2">ESPECIAL <br>
                         PRODUCT</li>
-                </div>
-                <div class="col-3 c12"></div>
-                <div class="col-5 c13"></div>
-                <div class="col-2 c13">
                     <li class="btn">
                         <a href="">
                             제품 소개</a>
                     </li>
-                </div>
-                <div class="col-5 c13"></div>
-
-            </section>
-        </div>
-        <!--4. 컨텐츠 영역4-->
-        <div id="cont4" class="page pg2">
-            <section class="clb ibx">
-                <h2 class="dn">
-                    4. BUSINESS / WORLDWIDE PERFORMANCE</h2>
-                <div class="col-5 c1"></div>
-                <div class="col-2 c1">
-                    <li class="tit3">
-                        BUSINESS</li>
-                </div>
-                <div class="col-5 c1"></div>
-                <div class="col-3 c12"></div>
-                <div class="col-6 c12">
-                    <li class="tit4">
-                        WORLDWIDE <br>
+                </ul>
+            </div>
+            <div id="cont4" class="page">
+                <ul class="con4">
+                    <li class="tit1">BUSINESS</li>
+                    <li class="tit2">WORLDWIDE <br>
                         PERFORMANCE</li>
-                </div>
-                <div class="col-3 c12"></div>
-                <div class="col-5 c13"></div>
-                <div class="col-2 c13">
                     <li class="btn">
                         <a href="">
                             사업실적</a>
                     </li>
-                </div>
-                <div class="col-5 c13"></div>
-
-            </section>
-        </div>
-        <!--5. 컨텐츠 영역5-->
-        <div id="cont5" class="page pg2">
-            <section class="clb ibx">
-                <h2 class="dn">
-                    5. NOTICE / COMPANY NEWS</h2>
-                <div class="col-5 c1"></div>
-                <div class="col-2 c1">
-                    <li class="tit3">
-                        NOTICE</li>
-                </div>
-                <div class="col-5 c1"></div>
-                <div class="col-3 c12"></div>
-                <div class="col-6 c12">
-                    <li class="tit4">
-                        COMPANY <br>
+                </ul>
+            </div>
+            <div id="cont5" class="page">
+                <ul class="con5">
+                    <li class="tit1">NOTICE</li>
+                    <li class="tit2">COMPANY <br>
                         NEWS</li>
-                </div>
-                <div class="col-3 c12"></div>
-                <div class="col-5 c13"></div>
-                <div class="col-2 c13">
                     <li class="btn">
                         <a href="">
                             공지사항</a>
                     </li>
-                </div>
-                <div class="col-5 c13"></div>
+                </ul>
+            </div>
+        </section>
 
-            </section>
-        </div>
+        <!--하단블릿-->
+        <footer>
+
+            <ol class="bnav">
+                <li class="on">
+                    <a href=""><span></span></a>
+                </li>
+                <li><a href=""><span></span></a></li>
+                <li><a href=""><span></span></a></li>
+                <li><a href=""><span></span></a></li>
+                <li><a href=""><span></span></a></li>
+            </ol>
+
+        </footer>
     </div>
 
-    <!--???. 하단 블릿영역-->
-    <ol class="clb ibx">
-        <div class="col-2 bnav">
-            <li class="on">
-                <a href=""><span></span></a>
-            </li>
-            <li><a href=""><span></span></a></li>
-            <li><a href=""><span></span></a></li>
-            <li><a href=""><span></span></a></li>
-            <li><a href=""><span></span></a></li>
-        </div>
-    </ol>
 
-    <!--그리드뷰:그리드 시스템 비주얼뷰-->
-    <ul class="grid">
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-    </ul>
+
+
+
+
+
+
 
 </body></html>

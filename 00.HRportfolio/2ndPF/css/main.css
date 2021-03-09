@@ -1,149 +1,367 @@
 @charset "utf-8";
-/* 덕신사 CSS - main.css */
-/* 메인페이지에만 나오는 요소를 코딩한다! */
+/*main.css*/
 
-/*외부파일 불러오기*/
-/*@import url(gridView.css);*/
-@import url(gridSet.css);
-/****************/
-@import url(core.css);
-@import url(common.css);
-
+@import url(reset.css);
+/**********************/
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&display=swap');
 /*font-family: 'Cormorant Garamond', serif;*/
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500&display=swap');
 /*font-family: 'Open Sans', sans-serif;*/
+/**********************/
 
-body {
+.container {
     position: relative;
-}
-
-/*메인페이지 전체 디자인보기*/
-
-/******************************************/
-/******************************************/
-
-/*상단영역*/
-#top {
-    position: fixed;
-    /*상단고정*/
-    z-index: 9999;
     width: 100%;
-    /*border: 1px solid blue;*/
+    height: 100%;
 }
 
-#top .hlogo {
-    position: relative;
-    width: 175px;
-    padding-left: 35%;
+.wrap {
+    display: flex;
+    width: 500vw;
+    height: 100vh;
 }
-#top .mlogo{
+
+header {
+    position: fixed;
+    /*min-width: 1280px; 미디어쿼리에 안하고 이거해도 됨*/
+    width: 100vw;
+    height: 150px;
+    /*background: #aaa;*/
+    z-index: 10;
 }
-#top .ham img {
+
+header h1 {
     position: absolute;
-    width: 20px;
-    height: 20px;
-
-    /*display: none;*/
-
-    border: 3px solid lime;
-    /*display: none;*/
-    /*처음에 안보임*/
+    width: 170px;
+    top: 50%;
+    left: 5%;
+    transform: translateY(-50%);
 }
 
-#top .nav {
-    display: block;
+header h1 img {
+    width: 100%;
+}
+
+
+header nav {
+    position: absolute;
+    float: right;
+    width: 1000px;
+    top: 40%;
+    right: 2%;
+
+    /*border: 1px dotted yellow;*/
+}
+
+header nav ul.gnb {
     width: 100%;
     text-align: center;
 }
 
-#top .nav li {
-    /*상단영역 메뉴바*/
-    width: 20%;
-    /*font-size: 18px;*/
-    font-size: 9rem;
+header nav ul.gnb > li {
+    width: 14%;
+    float: left;
+    font-size: 18px;
     font-family: 'Noto Serif KR', serif;
 }
 
-#top .nav li:hover a {
-    font-family: 'Noto Serif KR', serif;
+header nav ul.gnb .ssub {
+    font-family: 'Cormorant Garamond', serif;
+}
+
+header nav ul.gnb .msub {
+    padding-right: 5px;
+}
+
+header nav ul.gnb .msub > a {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+header nav ul.gnb .msub > a:hover {
     font-weight: bold;
-    /*color: #f00;*/
 }
 
-#top .bl {
+header nav ul.gnb > li:nth-child(5) {
+    padding-right: 50px;
+}
+
+header nav ul.gnb .ssub {
     width: 100px;
 }
 
-#top .login {
-    position: absolute;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 9rem;
-    letter-spacing: 0.2em;
-}
-
-#top .lang {
-    position: absolute;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 9rem;
-    letter-spacing: 0.2em;
-}
-
-/*컨텐츠영역*/
-.mid {
-    vertical-align: middle;
-}
-
-/*1페이지 중앙 작은제목*/
-
-.page .tit1 {
+header nav ul.gnb .ssub > a {
     width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/*마우스 오버시 펼쳐지는 하단메뉴*/
+header nav ul.gnb .msub .sub {
+    margin-top: 10px;
+    border-radius: 25px 0;
+    background-color: #fff;
+    /*border: 1px solid lime;*/
+    display: none;
+}
+
+header nav ul.gnb .msub .sub li {
+    color: #666;
+    font-size: 16px;
+    line-height: 40px;
+}
+
+header nav ul.gnb .msub .sub li:first-child {
+    padding-top: 10px;
+}
+
+header nav ul.gnb .msub .sub li:last-child {
+    padding-bottom: 10px;
+}
+
+header nav ul.gnb .msub .sub li:hover {
+    color: #333;
+    font-weight: bold;
+}
+
+/*중문*/
+header nav ul.gnb .ssub li {
+    padding-top: 10px;
+    display: none;
+}
+
+.ham img {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    display: block;
+    top: 40%;
+    right: 5%;
+    list-style: none;
+    display: none;
+    cursor: pointer;
+}
+
+/*********/
+
+#slide {
+    display: flex;
+    width: 500vw;
+    height: 100vh;
+}
+
+#slide .page {
+    position: relative;
+    display: flex;
+    width: 20%;
+    height: 100%;
+}
+
+
+#slide .page .con1,
+#slide .page .con2,
+#slide .page .con3,
+#slide .page .con4,
+#slide .page .con5 {
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+    height: 300px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    justify-content: center;
+    align-items: center;
+
+    display: flex;
+    /*border: 1px solid orange;*/
+}
+
+/*첫페이지 ONE OF A <br class="br1">*/
+.br1 {
+    display: none;
+}
+
+/*상단 작은제목*/
+#slide .page ul li:first-child {
+    position: absolute;
+    display: inline;
     text-align: center;
+    width: 100%;
+    font-size: 18px;
     font-family: 'Cormorant Garamond', serif;
-    font-size: 9rem;
-    font-weight: normal;
+    /*padding-bottom: 18%;*/
+    top: 15px;
     letter-spacing: 0.2em;
 }
 
-/*1페이지 중앙 큰제목*/
-.page .tit2 {
-    width: 100%;
+/*상단 큰제목*/
+#slide .page ul li:nth-child(2) {
+    position: absolute;
+    display: inline;
     text-align: center;
+    width: 100%;
+    font-size: 80px;
     font-family: 'Cormorant Garamond', serif;
-    font-size: 40rem;
     letter-spacing: 0.1em;
 }
 
-/*2~5페이지 중앙 작은제목*/
-.page .tit3 {
-    width: 100%;
-    text-align: center;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 9rem;
-    font-weight: normal;
-    letter-spacing: 0.2em;
+/**********/
+/*모바일 메뉴이미지*/
+#mob {
+    display: none;
 }
 
-/*2~5페이지 중앙 큰제목*/
-.page .tit4 {
-    width: 100%;
-    text-align: center;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 40rem;
-    letter-spacing: 0.1em;
+#mob {
+    position: fixed;
+    max-width: 600px;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    width: 80%;
+    height: 100%;
+    background-color: #fff;
 }
+
+#mob .mtop {
+    position: relative;
+    width: 100%;
+    height: 80px;
+    /*border: 1px solid red;*/
+}
+
+#mob h1 img {/*갈색hlogo2*/
+    position: absolute;
+    width: 130px;
+    top: 40%;
+    left: 15px;
+    transform: translateY(-50%);
+}
+
+#mob h2 img {/*mxlogo*/
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 40%;
+    right: 5%;
+    cursor: pointer;
+}
+
+/**모바일내용**/
+#mob .mcon {
+    /*border: 5px dotted pink;*/
+    box-sizing: border-box;
+    padding: 0 30px;
+}
+
+.mp {
+    width: 100%;
+    height: 100%;
+}
+.mp > ol{    
+    margin-left: 50%;
+    margin-top: -30px;
+    padding-bottom: 5px;
+}
+
+#mob .mcon > ul.mnav > li {
+    width: 100%;
+    font: bold 30px/40px "맑은 고딕";
+}
+
+/*좌측 크고 두꺼운 글씨*/
+#mob .mcon > ul.mnav > li > a {
+    color: #000;
+    display: block;
+    width: 50%;
+    height: 100%;
+    /*border: 1px solid blue;*/
+}
+
+#mob .mcon > ul.mnav > li + li {
+    border-top: 1px solid #000;
+    padding: 10px 0;
+}
+
+#mob .mnav {
+}
+
+/*우측작은 글씨*/
+#mob .mnav .msub > li {
+    width: 100%;
+    height: 100%;
+    /*border: 1px solid green;*/
+}
+
+#mob .mnav .msub > li > a {
+    display: block;
+    color: #666;
+    font: bold 16px "맑은 고딕";
+    padding: 4px 10px 4px 10px;
+}
+
+
+/*모바일하단*/
+#mob .mbwrap{
+    position: absolute;
+    height: 70px;
+    /*border: 1px solid red;*/
+    margin: 0;
+    padding: 0 20px;
+    bottom: 0;
+}
+
+#mob .mbtm,
+#mob .mbtm2{
+    position: relative;
+    width: 100%;
+    height: 30px;
+    padding-bottom: 6px;
+    /*border: 1px solid red;*/
+}
+
+#mob .mbtm ul li,
+#mob .mbtm2 ul li{
+    display: block;
+    color: #333;
+    font-size: 16px;
+    font-family: 'Cormorant Garamond', serif, '맑은 고딕';
+}
+
+#mob .mbtm2 ul li>a{
+    font-family: '맑은 고딕';
+    font-size: 10px;
+}
+
+
+
+#mob .mbtm ul li,
+#mob .mbtm2 ul li{
+    padding-right: 15px;
+    float: left;
+}
+
+
+#mob .mbtm ul li:last-child a,
+#mob .mbtm2 ul li:last-child a{
+    font-weight: bold;
+}
+
+/**********/
 
 /*컨텐츠 밑 버튼*/
 .page .btn {
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
+    position: absolute;
+    /*margin-top: 20%;*/
+    bottom: 0;
     width: 260px;
     height: 38px;
     text-align: center;
     font-weight: bold;
-    /*18px*/
-    font: bold 1.125rem/33px "맑은 고딕";
+
+    font: bold 18px/38px "맑은 고딕";
     /*font: 스두크줄체 스타일 두께 크기 */
     letter-spacing: 0.1em;
     border: 1px solid #fff;
@@ -164,66 +382,54 @@ body {
     cursor: pointer;
 }
 
+/***********/
+
+footer {
+    position: fixed;
+    width: 100%;
+    height: 80px;
+    bottom: 0;
+    z-index: 10;
+    /*background: #ccc;*/
+}
 
 /*하단블릿영역*/
+
+/*블릿박스*/
 .bnav {
-    position: fixed;
-    /*하단고정*/
+    position: absolute;
+    margin-left: 5%;
     width: 100%;
-    z-index: 9999;
-    padding-left: 9%;
+    height: 20px;
+    z-index: 1;
+    /*border: 1px solid lime;*/
 }
 
-.bnav li {
-    position: relative;
-    /*span의 부모자격*/
-    width: 10px;
-    height: 10px;
-    box-sizing: border-box;
-    border: 1px solid #fff;
+.bnav > li {
+    width: 8px;
+    height: 8px;
     border-radius: 50%;
-    display: flex;
-    margin-right: 8px;
+    float: left;
+    margin: 0 4px;
+    background-color: transparent;
+    border: 1px solid #fff;
+    list-style: none;
+}
+
+.bnav a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+/*선택블릿on*/
+.bnav li.on {
+    background-color: #fff;
+    opacity: 1;
 }
 
 
-/********************************/
-/*******개별 페이지 박스 셋팅*******/
-
-
-/*#cont1 {
-    background-image: url(../images/main_cap1.png);
-    background-repeat: no-repeat;
-    background-position: center top;
-}*/
-
-/*
-#cont2 {
-    background-image: url(../images/main_cap2.png);
-    background-repeat: no-repeat;
-    background-position: center top;
-}
-
-#cont3 {
-    background-image: url(../images/main_cap3.png);
-    background-repeat: no-repeat;
-    background-position: center top;
-}
-
-#cont4 {
-    background-image: url(../images/main_cap4.png);
-    background-repeat: no-repeat;
-    background-position: center top;
-}
-
-#cont5 {
-    background-image: url(../images/main_cap5.png);
-    background-repeat: no-repeat;
-    background-position: center top;
-}
-*/
-/*.....*/
-
+/***********/
 
 
 #cont1 {
