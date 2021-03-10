@@ -1,8 +1,6 @@
 # FSD202
 풀스택개발자 과정 소스
 
-A web developer is a programmer who specializes in, or is specifically engaged in, the development
-of World Wide Web applications using a client–server model. The applications typically use HTML, 
-CSS and JavaScript in the client, PHP, ASP.NET (C#), Python, Go or Java in the server, and http 
-for communications between client and server. A web content management system is often used to 
-develop and maintain web applications.
+2020. 10. 20 ~ 2021. 04. 01
+풀스택개발자 과정 수업 이수중 스스로 제작해 본 포트폴리오 입니다.
+수업 도중 배웠던 제이쿼리와 미디어쿼리등을 연습해보았고 포토샵을 간단하게 활용하기도 했습니다.
