@@ -1,450 +1,467 @@
 @charset "utf-8";
-/*main.css*/
+/*
+        @charset은 외부 css의 언어인코딩 설정임 (필수!)
+        "utf-8" 은 2바이트 문자도 깨짐없이 인코딩 설정
+    */
 
-@import url(reset.css);
-/**********************/
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&display=swap');
-/*font-family: 'Cormorant Garamond', serif;*/
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500&display=swap');
-/*font-family: 'Open Sans', sans-serif;*/
-/**********************/
+/*   
+    @import url(경로)
+        - 다른 외부 CSS를 불러와서 합치는 방식 (merginf머징)
+        - CSS의 상단에 코딩한다 (@charset 아래)
+        - link방식에 비해 효율성이 좋아짐
+    */
 
-.container {
-    position: relative;
-    width: 100%;
-    height: 100%;
+/*CDN방식 웹폰트*/
+@import url('https://fonts.googleapis.com/css?family=Cute+Font|Jua&display=swap');
+/*
+font-family: 'Cute Font', cursive;d
+font-family: 'Jua', sans-serif;
+*/
+
+/*공통초기화*/
+html,
+body,
+h1,
+h2,
+h3 {
+    margin: 0;
+    padding: 0;
 }
 
-.wrap {
-    display: flex;
-    width: 500vw;
-    height: 100vh;
+/*전체배경색*/
+body {
+    /*검정색배경*/
+    background-color: #000;
+    /*흰색글씨*/
+    color: #fff;
 }
 
-header {
-    position: fixed;
-    /*min-width: 1280px; 미디어쿼리에 안하고 이거해도 됨*/
-    width: 100vw;
-    height: 150px;
-    /*background: #aaa;*/
-    z-index: 10;
-}
-
-header h1 {
-    position: absolute;
-    width: 170px;
-    top: 50%;
-    left: 5%;
-    transform: translateY(-50%);
-}
-
-header h1 img {
-    width: 100%;
-}
-
-
-header nav {
-    position: absolute;
-    float: right;
-    width: 1000px;
-    top: 40%;
-    right: 2%;
-
-    /*border: 1px dotted yellow;*/
-}
-
-header nav ul.gnb {
-    width: 100%;
-    text-align: center;
-}
-
-header nav ul.gnb > li {
-    width: 14%;
-    float: left;
-    font-size: 18px;
-    font-family: 'Noto Serif KR', serif;
-}
-
-header nav ul.gnb .ssub {
-    font-family: 'Cormorant Garamond', serif;
-}
-
-header nav ul.gnb .msub {
-    padding-right: 5px;
-}
-
-header nav ul.gnb .msub > a {
-    width: 100%;
-    height: 100%;
-    display: block;
-}
-
-header nav ul.gnb .msub > a:hover {
-    font-weight: bold;
-}
-
-header nav ul.gnb > li:nth-child(5) {
-    padding-right: 50px;
-}
-
-header nav ul.gnb .ssub {
-    width: 100px;
-}
-
-header nav ul.gnb .ssub > a {
-    width: 100%;
-    height: 100%;
-    display: block;
-}
-
-/*마우스 오버시 펼쳐지는 하단메뉴*/
-header nav ul.gnb .msub .sub {
-    margin-top: 10px;
-    border-radius: 25px 0;
-    background-color: #fff;
-    /*border: 1px solid lime;*/
-    display: none;
-}
-
-header nav ul.gnb .msub .sub li {
-    color: #666;
-    font-size: 16px;
-    line-height: 40px;
-}
-
-header nav ul.gnb .msub .sub li:first-child {
-    padding-top: 10px;
-}
-
-header nav ul.gnb .msub .sub li:last-child {
-    padding-bottom: 10px;
-}
-
-header nav ul.gnb .msub .sub li:hover {
-    color: #333;
-    font-weight: bold;
-}
-
-/*중문*/
-header nav ul.gnb .ssub li {
-    padding-top: 10px;
-    display: none;
-}
-
-.ham img {
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    display: block;
-    top: 40%;
-    right: 5%;
-    list-style: none;
-    display: none;
-    cursor: pointer;
-}
-
-/*********/
-
-#slide {
-    display: flex;
-    width: 500vw;
-    height: 100vh;
-}
-
-#slide .page {
-    position: relative;
-    display: flex;
-    width: 20%;
-    height: 100%;
-}
-
-
-#slide .page .con1,
-#slide .page .con2,
-#slide .page .con3,
-#slide .page .con4,
-#slide .page .con5 {
-    position: relative;
+/*공통 레이아웃 class*/
+.part {
+    width: 1200px;
     margin: 0 auto;
-    width: 100%;
-    height: 300px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
-    justify-content: center;
-    align-items: center;
-
-    display: flex;
-    /*border: 1px solid orange;*/
+    /*outline: 3px dashed lime;*/
 }
 
-/*첫페이지 ONE OF A <br class="br1">*/
-.br1 {
-    display: none;
+.onlink{
+    display: block;
 }
 
-/*상단 작은제목*/
-#slide .page ul li:first-child {
-    position: absolute;
-    display: inline;
+/*****각 영역별 레이아웃*****/
+/*A. 상단영역*/
+#top {
+    position: relative;
+    /*부모자격!*/
+    height: 80px;
+    z-index: 999;
+    /*아래쪽 레이아웃박스 보다 위!*/
+}
+
+/*B. 메인영역*/
+#cont {
+    position: relative;
+    /*부모자격*/
+    height: 788px;
+    background: url(../images/bg.jpg) no-repeat;
+}
+
+/*
+
+[ 웹 경로 설정 방법 ]
+1. 절대경로 : 웹사이트의 root(최상위폴더)를 기준한 경로 표기법
+    슬래쉬로 시작함 - /경로...
+2. 상대경로 : 현재위치에서 위치를 찾는 표기법
+            1) 현재파일위치 폴더 ./
+            2) 현재파일 폴더의 부모폴더 ../
+3. 외부경로 : http로 시작하는 웹경로
+
+*/
+
+
+
+/*C. 하단영역*/
+#info {
+    position: relative;
+    /*부모자격*/
+    height: 100px;
+}
+
+/*****각 구성요소 디자인*****/
+/*1. 전체타이틀*/
+.tit {
+    height: 100%;
     text-align: center;
-    width: 100%;
-    font-size: 18px;
-    font-family: 'Cormorant Garamond', serif;
-    /*padding-bottom: 18%;*/
-    top: 15px;
-    letter-spacing: 0.2em;
+    font-family: 'Jua', sans-serif;
+    font-size: 40px;
+    color: #fff;
+    line-height: 80px;
+    /*텍스트 그림자로 글로우 효과*/
+    /* x y blur color */
+    text-shadow: 0 0 20px #ffffff;
+    /*배경이미지*/
+    background: url(../images/curtain.jpg) repeat-x;
+
+
 }
 
-/*상단 큰제목*/
-#slide .page ul li:nth-child(2) {
+/*1-2. 상단좌측 전구이미지*/
+.lb {
     position: absolute;
-    display: inline;
-    text-align: center;
-    width: 100%;
-    font-size: 80px;
-    font-family: 'Cormorant Garamond', serif;
-    letter-spacing: 0.1em;
-}
-
-/**********/
-/*모바일 메뉴이미지*/
-#mob {
-    display: none;
-}
-
-#mob {
-    position: fixed;
-    max-width: 600px;
-    z-index: 100;
     top: 0;
     left: 0;
-    width: 80%;
-    height: 100%;
-    background-color: #fff;
+    width: 202px;
+    height: 340px;
 }
 
-#mob .mtop {
-    position: relative;
-    width: 100%;
-    height: 80px;
-    /*border: 1px solid red;*/
-}
 
-#mob h1 img {/*갈색hlogo2*/
+/*2. GNB메뉴*/
+.gnb {
     position: absolute;
-    width: 130px;
-    top: 40%;
-    left: 15px;
-    transform: translateY(-50%);
+    bottom: 15px;
+    right: 15px;
+    /*나의 부모? #top
+        #top에 부모자격을 줌
+        부모자격은 static이 아니면 됨!
+        기존 디자인을 해치지 않는 포지션은 relative가 주로 사용됨!*/
+
 }
 
-#mob h2 img {/*mxlogo*/
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    top: 40%;
-    right: 5%;
-    cursor: pointer;
-}
-
-/**모바일내용**/
-#mob .mcon {
-    /*border: 5px dotted pink;*/
-    box-sizing: border-box;
-    padding: 0 30px;
-}
-
-.mp {
-    width: 100%;
-    height: 100%;
-}
-.mp > ol{    
-    margin-left: 50%;
-    margin-top: -30px;
-    padding-bottom: 5px;
-}
-
-#mob .mcon > ul.mnav > li {
-    width: 100%;
-    font: bold 30px/40px "맑은 고딕";
-}
-
-#mob .mcon > ul.mnav > li > a {
-    color: #000;
-    display: block;
-    width: 50%;
-    height: 100%;
-    border: 1px solid blue;
-}
-
-#mob .mcon > ul.mnav > li + li {
-    border-top: 1px solid #000;
-    padding: 10px 0;
-}
-
-#mob .mnav {
-}
-
-#mob .mnav .msub > li {
-    width: 50%;
-    height: 100%;
-    border: 1px solid green;
-}
-
-#mob .mnav .msub > li > a {
-    display: block;
-    color: #666;
-    font: bold 16px "맑은 고딕";
-}
-
-
-/*모바일하단*/
-#mob .mbwrap{
-    position: absolute;
-    height: 70px;
-    border: 1px solid red;
+.gnb ul {
+    /*3無*/
     margin: 0;
-    padding: 0 20px;
-    bottom: 0;
+    padding: 0;
+    list-style: none;
+
+    /*outline: 2px solid red;*/
 }
 
-#mob .mbtm,
-#mob .mbtm2{
-    position: relative;
-    width: 100%;
-    height: 30px;
-    padding-bottom: 6px;
-    /*border: 1px solid red;*/
-}
-
-#mob .mbtm ul li,
-#mob .mbtm2 ul li{
+/*float된 자식의 높이값 인식*/
+/*가상요소 clear:both*/
+.gnb ul::after {
+    content: "";
     display: block;
-    color: #333;
+    clear: both;
+}
+
+
+.gnb ul > li {
+    /*상위메뉴li만 선택*/
+    position: relative;
+    /*부모자격-서브메뉴*/
+    /*block요소 옆으로 흐르게*/
+    float: left;
+    padding: 0 10px;
+}
+
+.gnb ul li a {
+    /*
+    글자색과 밑줄은 a요소에서 변경해야 함!
+    여기에 기본셋팅
+    */
+    color: #fff;
+    text-decoration: none;
+    /*글자체*/
+    font-family: 'Jua', sans-serif;
     font-size: 16px;
-    font-family: 'Cormorant Garamond', serif, '맑은 고딕';
 }
 
-#mob .mbtm2 ul li>a{
-    font-family: '맑은 고딕';
-    font-size: 10px;
-}
-
-
-
-#mob .mbtm ul li,
-#mob .mbtm2 ul li{
-    padding-right: 15px;
-    float: left;
-}
-
-
-#mob .mbtm ul li:last-child a,
-#mob .mbtm2 ul li:last-child a{
-    font-weight: bold;
-}
-
-/**********/
-
-/*컨텐츠 밑 버튼*/
-.page .btn {
+/*서브메뉴박스*/
+.smenu {
     position: absolute;
-    /*margin-top: 20%;*/
-    bottom: 0;
-    width: 260px;
-    height: 38px;
-    text-align: center;
-    font-weight: bold;
-
-    font: bold 18px/38px "맑은 고딕";
-    /*font: 스두크줄체 스타일 두께 크기 */
-    letter-spacing: 0.1em;
-    border: 1px solid #fff;
-    border-radius: 40px;
+    left: 50%;
+    /*부모는? 싸고있는 li*/
+    transform: translateX(-50%);
+    /*가로중앙이동*/
+    width: 100px;
+    padding: 5px;
+    background: url(../images/bg_smenu.png) no-repeat center/cover;
+    /*outline: 2px solid aqua;*/
+    display: none;
+    /*처음에 서브메뉴 안보임!*/
 }
 
-/*버튼에 마우스 오버시*/
-.page .btn:hover {
-    background-color: #fff;
-    transition: 0.3s ease-in-out;
-    cursor: pointer;
+/*상위메뉴 li에 마우스 오버시 하위메뉴 보이기*/
+.gnb ul > li:hover .smenu {
+    display: block;
 }
 
-.page .btn:hover a {
-    color: #333;
-    /*font: bold 1.000em/2.2 "맑은 고딕";*/
-    letter-spacing: 0.1em;
-    cursor: pointer;
-}
-
-/***********/
-
-footer {
-    position: fixed;
-    width: 100%;
-    height: 80px;
-    bottom: 0;
-    z-index: 10;
-    /*background: #ccc;*/
-}
-
-/*하단블릿영역*/
-
-/*블릿박스*/
-.bnav {
+/*가상요소로 삼각형 만들기!*/
+.smenu::before {
+    content: "";
+    display: block;
     position: absolute;
-    margin-left: 5%;
-    width: 100%;
-    height: 20px;
-    z-index: 1;
-    /*border: 1px solid lime;*/
+    top: -5px;
+    left: 45px;
+    /*부모는? .smenu*/
+    width: 0;
+    height: 0;
+    /*정삼각형 보더로 만들기*/
+    border-bottom: 10px solid #ccc;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    /*역삼각형은 boder-top대신 boder-bottom으로 함*/
 }
 
-.bnav > li {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    float: left;
-    margin: 0 4px;
-    background-color: transparent;
-    border: 1px solid #fff;
+
+.smenu ol {
+    border: 2px solid #ccc;
+    margin: 0;
+    padding: 10px;
     list-style: none;
 }
 
-.bnav a {
+/*적용우선순위를 높이려면 기존 셋팅의 부모를 앞에 쓴다!*/
+.gnb .smenu a {
+    font-size: 11px;
+}
+
+/*서브메뉴 a요소에 마우스 오버시*/
+/*글자색 변경*/
+.gnb .smenu a:hover {
+    color: #f00;
+}
+
+/*가상요소로 손가락모양 넣기*/
+.gnb .smenu a:hover::after {
+    content: "☞";
+    float: right;
+    position: relative;
+    /*현재 위치에서 위치이동이 필요할 경우
+    다른 요소에 영향없이 움직일 때도 사용함!*/
+    top: 5px;
+    left: 5px;
+}
+
+/*서브메뉴 구분선
+.sbar {
+    border-top: 2px solid #ccc;
+    margin-top: 5px;
+}*/
+
+
+
+/*3. 스크린박스*/
+#screen {
+    position: absolute;
+    top: 136px;
+    left: 257px;
+    /*나의 부모는? #cont*/
+    width: 701px;
+    height: 398px;
+    background-color: #000;
+}
+
+/* 스크린 아이프레임 */
+#screen iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/*전구이미지2-1*/
+.lb1 {
+    position: absolute;
+    top: 120px;
+    right: -183px;
+    transform: rotate(75deg);
+}
+
+.lb2 {
+    position: absolute;
+    top: 132px;
+    left: -134px;
+    transform: rotate(-50deg);
+}
+
+/*전구2 애니매이션*/
+.star{
+    position: absolute;
+    animation: starAni 4s ease-in-out infinite alternate;
+    background: url(../images/lb2-1.png) no-repeat;
+    width: 680px;
+    height: 340px;
+}
+
+@keyframes starAni{
+    0%{
+        background-image: url(../images/lb2-5.png);
+    }
+    50%{
+        background-image: url(../images/lb2-6.png);
+    }
+    100%{
+        background-image: url(../images/lb2-5.png);
+    }
+}
+
+/*4. 영화선택메뉴*/
+.mlist {
+    position: absolute;
+    /*부모자격-.stxt 부모*/
+    bottom: 50px;
+    left: 250px;
+    /*나의 부모는? #cont*/
+    overflow: hidden
+        /*자식요소인 stxt를 숨기기위해 부모자격 박스에 설치한다!
+        (다른 일반부모요소엔 적용되지 않는다!)
+        */
+}
+
+.mlist ul {
+    /*3無*/
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+    /*float자식요소 높이값 인식*/
+    /*outline: 10px solid yellow;*/
+}
+
+/*
+    ul>li 는 직계자식 li만 float등 설정적용 됨!
+*/
+
+.mlist ul > li {
+    float: left;
+    /*옆으로 흐르게*/
+    padding: 0 10px;
+    /*패딩 양쪽 10px*/
+
+    /*커서변경하기*/
+    cursor: pointer;
+    /*손가락모양
+    여러모양 옵션 참조:
+    https://www.w3schools.com/cssref/playit.asp?filename=playcss_cursor&preval=alias*/
+}
+
+/*썸네일 포스터 이미지 크기지정으로 li크기 만들기*/
+.mlist img {
+    width: 157px;
+    height: 140px;
+}
+
+/*5. 영화정보박스*/
+.stxt {
+    position: absolute;
+    /*위치이동값을 안주면 젠틀하다!*/
+    top: 100%;
+    /*높이값 만큼 아래로 밀어놓기*/
+    /*top방향의 부모는? .mlist*/
+    /*
+    
+        주의사항: 편리한 코딩을 위해 left값은 설정하지 않아도 된다!
+        left는 젠틀하여 그 자리세 그대로 배치된다.
+        만약 left를 주면 싸고 있는 li에 부모설정 등 더 복잡한 셋팅을 해야한 한다.
+    
+    */
+
+    /*크기지정-이미지와 동일 크기*/
+    width: 157px;
+    height: 140px;
+
+    /*글자셋팅*/
+    text-align: center;
+    font: 14px/25px '맑은 고딕';
+
+    /*반투명배경*/
+    background-color: rgba(0, 0, 0, 0.7);
+
+    /*outline: 2px solid red;*/
+
+
+    /*3無*/
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    /*트랜지션*/
+    transition: top .4s ease-out;
+}
+
+/*노래 선택메뉴 li 에 마우스 오버시 .stxt 올라오기*/
+.mlist > ul > li:hover .stxt {
+    top: 0;
+}
+
+
+
+/*노래정보리스트*/
+/*부모 li의 float이 적용되지 않음*/
+/*노래정보리스트 첫번째 항목(제목)에 마진, 글자색/크지변경*/
+.stxt li:first-child {
+    margin-top: 10px;
+    color: #ff8000;
+    font-size: 15px;
+}
+
+/*6. 하단로고*/
+#info {
+    top: -40px;
+    font-family: 'Jua', sans-serif;
+    font-size: 25px;
+    color: #fff;
+    line-height: 80px;
+    /*텍스트 그림자로 글로우 효과*/
+    /* x y blur color */
+    text-shadow: 0 0 20px #ffffff;
+}
+
+/*7. sns 바로가기 박스*/
+.sns {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    /*나의 부모?*/
+
+    /*3無*/
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.sns li {
+    float: left;
+    width: 34px;
+    height: 34px;
+    margin: 2px;
+    /*outline: 2px solid lime;*/
+    /*공통 배경이미지*/
+    background: url(../images/sprites_logo.png) no-repeat;
+}
+
+/*
+
+    [ 스프라이츠 위치정보 알아내기 ]
+    - 포토샵에서 사각선택툴로 맨위에서 부터 알고자하는 위치까지 드래그하여
+      가로크기는 배경 left, 세로크기는 배경 top값으로 셋팅함
+
+*/
+.sns li:first-child {
+    /*페이스북*/
+    background-position: -510px -429px;
+}
+
+.sns li:nth-child(2) {
+    /*트위터*/
+    background-position: -551px -429px;
+}
+
+.sns li:last-child {
+    /*인스타그램*/
+    background-position: -592px -429px;
+}
+
+/*a요소 확장*/
+.sns a {
     display: block;
     width: 100%;
     height: 100%;
 }
 
-/*선택블릿on*/
-.bnav li.on {
-    background-color: #fff;
-    opacity: 1;
-}
-
-
-/***********/
-
-
-#cont1 {
-    background: url(../images/bg1.jpg) no-repeat top/cover;
-}
-
-#cont2 {
-    background: url(../images/bg2.jpg) no-repeat top/cover;
-}
-
-#cont3 {
-    background: url(../images/bg3.jpg) no-repeat top/cover;
-}
-
-#cont4 {
-    background: url(../images/bg4.jpg) no-repeat top/cover;
-}
-
-#cont5 {
-    background: url(../images/bg5.jpg) no-repeat top/cover;
+/*IR(배경이미지 설명)*/
+.bld {
+    display: block;
+    width: 0;
+    height: 0;
+    overflow: hidden;
 }
