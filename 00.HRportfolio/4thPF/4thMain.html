@@ -1,354 +1,55 @@
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
-    <meta charset="euc-kr">
-    <title>풀스택개발자 과정</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,500&display=swap');
-        /*font-family: 'Playfair Display', serif; >> 동그라미 내부글씨*/
-        @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@1,700&display=swap');
-        /*font-family: 'IBM Plex Sans', sans-serif; >> top글씨*/
-
-        html,
-        body {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            background-color: #ffeaea;
-        }
-
-
-        /*상단영역*/
-        #top {
-            position: relative;
-            width: 100%;
-            text-align: center;
-        }
-
-        /*song hye ri*/
-        h1 {
-            color: #ef3c3c;
-            font-family: 'IBM Plex Sans', sans-serif;
-            font-size: 40px;
-        }
-
-        /*portfolio*/
-        h2 {
-            color: #11689a;
-            font-family: 'IBM Plex Sans', sans-serif;
-            font-size: 30px;
-        }
-
-        /************************************************************/
-
-
-        /*메뉴바*/
-        .gnb {
-            position: relative;
-            /*부모는 #top*/
-            top: 15%;
-            width: 100%;
-        }
-        
-        #gnb1,
-        #gnb2,
-        #gnb3,
-        #gnb4{
-            padding: 0;
-        }
-
-        .gnb ol {
-            width: 200px;
-            height: 200px;
-            list-style: none;
-        }
-        
-
-        .gnb ol:first-child {
-            /*이미지 두개 겹쳐보임*/
-            position: absolute;
-            left: 20%;
-            transform: translateX(-50%);
-        }
-        .gnb ol:nth-child(2) {
-            /*이미지 두개 겹쳐보임*/
-            position: absolute;
-            left: 40%;
-            transform: translateX(-50%);
-        }
-        .gnb ol:nth-child(3) {
-            /*이미지 두개 겹쳐보임*/
-            position: absolute;
-            left: 60%;
-            transform: translateX(-50%);
-        }
-        .gnb ol:nth-child(4) {
-            /*이미지 두개 겹쳐보임*/
-            position: absolute;
-            left: 80%;
-            transform: translateX(-50%);
-        }
-        
-        .gnb ol li {
-            width: 100%;
-            height: 100%;
-        }
-
-
-        /*앞에 오는 애*/
-        .gnb li:nth-of-type(even) {
-            float: left;
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            text-align: center;
-        }
-
-        /*뒤에 있는애*/
-        .gnb li:nth-of-type(odd) {
-            float: left;
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            text-align: center;
-        }
-
-        /*앞에 오는 애*/
-        .gnb li:nth-of-type(even) a {
-            background-color: #ef3c3c;
-        }
-
-        /*뒤에 있는애*/
-        .gnb li:nth-of-type(odd) a {
-            background-color: #11689a;
-        }
-
-        .gnb li a {
-            position: absolute;
-            top: 0 !important;
-            left: 0;
-            display: block;
-            color: #fff;
-            text-decoration: none;
-            width: 100%;
-            height: 100%;
-            top: 20%;
-            font-family: 'Playfair Display', serif;
-            font-size: 30px;
-            border-radius: 50%;
-            line-height: 200px;
-        }
-
-        /*****************돌아가게하기*****************/
-        #gnb1 li:first-child a {
-            transform: rotateY(90deg);
-            /*원상태로 돌아올때 트랜지션*/
-            transition: all .4s ease-in;
-            /*기다림없이 처음에 천천히*/
-        }
-
-        /*2.*/
-        #gnb1:hover li:first-child a {
-            transform: rotateY(0deg);
-            /*트랜지션-0.4초 기다림*/
-            transition: all .4s ease-out .4s;
-        }
-
-        /*3.*/
-        #gnb1 li:last-child a {
-            /*원상태로 돌아올때 트랜지션*/
-            transition: all .4s ease-out .4s;
-            /*돌아올때는 기다렸다가 마지막에 천천히*/
-        }
-
-        /*4.*/
-        #gnb1:hover li:last-child a {
-            transform: rotateY(90deg);
-            /*트랜지션*/
-            transition: all .4s ease-in;
-        }
-
-        /*****************돌아가게하기*****************/
-
-        /*****************돌아가게하기2*****************/
-        #gnb2 li:first-child a {
-            transform: rotateY(90deg);
-            /*원상태로 돌아올때 트랜지션*/
-            transition: all .4s ease-in;
-            /*기다림없이 처음에 천천히*/
-        }
-
-        /*2.*/
-        #gnb2:hover li:first-child a {
-            transform: rotateY(0deg);
-            /*트랜지션-0.4초 기다림*/
-            transition: all .4s ease-out .4s;
-        }
-
-        /*3.*/
-        #gnb2 li:last-child a {
-            /*원상태로 돌아올때 트랜지션*/
-            transition: all .4s ease-out .4s;
-            /*돌아올때는 기다렸다가 마지막에 천천히*/
-        }
-
-        /*4.*/
-        #gnb2:hover li:last-child a {
-            transform: rotateY(90deg);
-            /*트랜지션*/
-            transition: all .4s ease-in;
-        }
-
-        /*****************돌아가게하기2*****************/
-
-        /*****************돌아가게하기3*****************/
-        #gnb3 li:first-child a {
-            transform: rotateY(90deg);
-            /*원상태로 돌아올때 트랜지션*/
-            transition: all .4s ease-in;
-            /*기다림없이 처음에 천천히*/
-        }
-
-        /*2.*/
-        #gnb3:hover li:first-child a {
-            transform: rotateY(0deg);
-            /*트랜지션-0.4초 기다림*/
-            transition: all .4s ease-out .4s;
-        }
-
-        /*3.*/
-        #gnb3 li:last-child a {
-            /*원상태로 돌아올때 트랜지션*/
-            transition: all .4s ease-out .4s;
-            /*돌아올때는 기다렸다가 마지막에 천천히*/
-        }
-
-        /*4.*/
-        #gnb3:hover li:last-child a {
-            transform: rotateY(90deg);
-            /*트랜지션*/
-            transition: all .4s ease-in;
-        }
-
-        /*****************돌아가게하기3*****************/
-        
-        /*****************돌아가게하기4*****************/
-        #gnb4 li:first-child a {
-            transform: rotateY(90deg);
-            /*원상태로 돌아올때 트랜지션*/
-            transition: all .4s ease-in;
-            /*기다림없이 처음에 천천히*/
-        }
-
-        /*2.*/
-        #gnb4:hover li:first-child a {
-            transform: rotateY(0deg);
-            /*트랜지션-0.4초 기다림*/
-            transition: all .4s ease-out .4s;
-        }
-
-        /*3.*/
-        #gnb4 li:last-child a {
-            /*원상태로 돌아올때 트랜지션*/
-            transition: all .4s ease-out .4s;
-            /*돌아올때는 기다렸다가 마지막에 천천히*/
-        }
-
-        /*4.*/
-        #gnb4:hover li:last-child a {
-            transform: rotateY(90deg);
-            /*트랜지션*/
-            transition: all .4s ease-in;
-        }
-
-        /*****************돌아가게하기4*****************/
-
-    </style>
-    <script>
-    $(function(){ /// jQB //////////////////
-        $("#gnb1").click(
-            function() { 
-                location.href='window.open().00.HRportfolio/1stPF/1stMain.html';
-            
-            }); ///// click ///////////
-        
-        $("#gnb2").click(
-            function() { 
-                location.href='window.open().00.HRportfolio/2ndPF/2ndMain.html';
-            
-            }); ///// click ///////////
-        
-        $("#gnb3").click(
-            function() { 
-                location.href='window.open().00.HRportfolio/3rdPF/3rdMain.html';
-            
-            }); ///// click ///////////
-        
-        
-        $("#gnb4").click(
-            function() { 
-                location.href='window.open().00.HRportfolio/4thPF/4stMain.html';
-            
-            }); ///// click ///////////
-        
-        
-        
-        
-    }); /////////// jQB ////////////////////
-    </script>
-
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cube Trip</title>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/main.js"></script>
 </head>
-
 <body>
-    <header id="top">
-        <h1>Song Hye Ri</h1>
-        <h2>PORTFOLIO</h2>
-    </header>
-    <nav class="gnb">
-        <ol id="gnb1">
+   <!--1.전체제목-->
+    <h1 class="tit">우리나라의 특별시</h1>
+    <!--2.메뉴버튼-->
+    <nav class="city">
+        <ul>
             <li>
-                <a href="00.HRportfolio/1stPF/1stMain.html" target="_blank">click</a>
+                <a href="" onclick="chgCity(this);return false;">출발</a>
             </li>
             <li>
-                <a href="00.HRportfolio/1stPF/1stMain.html" target="_blank">
-                    1st</a>
-            </li>
-        </ol>
-        <ol id="gnb2">
-            <li>
-                <a href="00.HRportfolio/2ndPF/2ndMain.html" target="_blank">click</a>
+                <a href="" onclick="chgCity(this);return false;">부산</a>
             </li>
             <li>
-                <a href="00.HRportfolio/2ndPF/2ndMain.html" target="_blank">
-                    2nd</a>
-            </li>
-        </ol>
-        <ol id="gnb3">
-            <li>
-                <a href="00.HRportfolio/3rdPF/3rdMain.html" target="_blank">click</a>
+                <a href="" onclick="chgCity(this);return false;">대구</a>
             </li>
             <li>
-                <a href="00.HRportfolio/3rdPF/3rdMain.html" target="_blank">
-                    3rd</a>
-            </li>
-        </ol>
-        <ol id="gnb4">
-            <li>
-                <a href="00.HRportfolio/4thPF/4thMain.html" target="_blank">click</a>
+                <a href="" onclick="chgCity(this);return false;">인천</a>
             </li>
             <li>
-                <a href="00.HRportfolio/4thPF/4thMain.html" target="_blank">
-                    4th</a>
+                <a href="" onclick="chgCity(this);return false;">광주</a>
             </li>
-        </ol>
+            <li>
+                <a href="" onclick="chgCity(this);return false;">대전</a>
+            </li>
+        </ul>
     </nav>
-
-
-
+    
+    <!--3.큐브-->
+    <div class="cube">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <!--4.도시설명박스-->
+    <div class="cbox">
+        <article class="ctxt">
+            <h2 id="cname">부산</h2>
+            <p id="cinfo">부산광역시(釜山廣域市, 영어: Busan Metropolitan City)는 대한민국 동남부 해안에 위치한 광역시이다. 대한민국의 제2의 도시이자 최대의 항구도시로, 부산항을 중심으로 해상 무역과 물류 산업이 발달하였다. 일본과는 대한해협과 쓰시마섬을 사이에 두고 마주하고 있다. 시청 소재지는 연제구 연산동이며, 행정구역으로는 15구 1군을 두고 있다.</p>
+        </article>
+    </div>
+    
 </body>
-
 </html>
