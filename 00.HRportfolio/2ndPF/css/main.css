@@ -45,18 +45,15 @@ header h1 img {
 
 header nav {
     position: absolute;
-    /* float: right; */
-    width: 80%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    /* right: 2%; */
-    /* border: 1px dotted yellow;
+    float: right;
+    width: 1000px;
+    top: 40%;
+    right: 2%;
+
     /*border: 1px dotted yellow;*/
 }
 
 header nav ul.gnb {
-    margin: 0 auto;
     width: 100%;
     text-align: center;
 }

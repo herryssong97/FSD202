@@ -1,11 +1,10 @@
 $(document).ready(function(){
     
     $("header nav ul.gnb>li").hover(function(){
-        $(this).find("ul.sub").show();
+        $(this).find("ul.sub").stop().show();
     },function(){
-        $(this).find("ul.sub").hide();        
+        $(this).find("ul.sub").stop().hide();        
     }); //////// 메인메뉴바 클릭시 하단에 메뉴 바 펼쳐지게
-    
     
     
     
