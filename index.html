@@ -54,7 +54,9 @@
         }
         
         #gnb1,
-        #gnb2{
+        #gnb2,
+        #gnb3,
+        #gnb4{
             padding: 0;
         }
 
@@ -63,19 +65,33 @@
             height: 200px;
             list-style: none;
         }
+        
 
         .gnb ol:first-child {
             /*이미지 두개 겹쳐보임*/
             position: absolute;
-            left: 35%;
+            left: 20%;
             transform: translateX(-50%);
         }
         .gnb ol:nth-child(2) {
             /*이미지 두개 겹쳐보임*/
             position: absolute;
-            left: 65%;
+            left: 40%;
             transform: translateX(-50%);
         }
+        .gnb ol:nth-child(3) {
+            /*이미지 두개 겹쳐보임*/
+            position: absolute;
+            left: 60%;
+            transform: translateX(-50%);
+        }
+        .gnb ol:nth-child(4) {
+            /*이미지 두개 겹쳐보임*/
+            position: absolute;
+            left: 80%;
+            transform: translateX(-50%);
+        }
+        
         .gnb ol li {
             width: 100%;
             height: 100%;
@@ -188,6 +204,68 @@
 
         /*****************돌아가게하기2*****************/
 
+        /*****************돌아가게하기3*****************/
+        #gnb3 li:first-child a {
+            transform: rotateY(90deg);
+            /*원상태로 돌아올때 트랜지션*/
+            transition: all .4s ease-in;
+            /*기다림없이 처음에 천천히*/
+        }
+
+        /*2.*/
+        #gnb3:hover li:first-child a {
+            transform: rotateY(0deg);
+            /*트랜지션-0.4초 기다림*/
+            transition: all .4s ease-out .4s;
+        }
+
+        /*3.*/
+        #gnb3 li:last-child a {
+            /*원상태로 돌아올때 트랜지션*/
+            transition: all .4s ease-out .4s;
+            /*돌아올때는 기다렸다가 마지막에 천천히*/
+        }
+
+        /*4.*/
+        #gnb3:hover li:last-child a {
+            transform: rotateY(90deg);
+            /*트랜지션*/
+            transition: all .4s ease-in;
+        }
+
+        /*****************돌아가게하기3*****************/
+        
+        /*****************돌아가게하기4*****************/
+        #gnb4 li:first-child a {
+            transform: rotateY(90deg);
+            /*원상태로 돌아올때 트랜지션*/
+            transition: all .4s ease-in;
+            /*기다림없이 처음에 천천히*/
+        }
+
+        /*2.*/
+        #gnb4:hover li:first-child a {
+            transform: rotateY(0deg);
+            /*트랜지션-0.4초 기다림*/
+            transition: all .4s ease-out .4s;
+        }
+
+        /*3.*/
+        #gnb4 li:last-child a {
+            /*원상태로 돌아올때 트랜지션*/
+            transition: all .4s ease-out .4s;
+            /*돌아올때는 기다렸다가 마지막에 천천히*/
+        }
+
+        /*4.*/
+        #gnb4:hover li:last-child a {
+            transform: rotateY(90deg);
+            /*트랜지션*/
+            transition: all .4s ease-in;
+        }
+
+        /*****************돌아가게하기4*****************/
+
     </style>
     <script>
     $(function(){ /// jQB //////////////////
@@ -200,6 +278,19 @@
         $("#gnb2").click(
             function() { 
                 location.href='window.open().00.HRportfolio/2ndPF/2ndMain.html';
+            
+            }); ///// click ///////////
+        
+        $("#gnb3").click(
+            function() { 
+                location.href='window.open().00.HRportfolio/3rdPF/3rdMain.html';
+            
+            }); ///// click ///////////
+        
+        
+        $("#gnb4").click(
+            function() { 
+                location.href='window.open().00.HRportfolio/4stPF/4stMain.html';
             
             }); ///// click ///////////
         
@@ -234,6 +325,24 @@
             <li>
                 <a href="00.HRportfolio/2ndPF/2ndMain.html" target="_blank">
                     2nd</a>
+            </li>
+        </ol>
+        <ol id="gnb3">
+            <li>
+                <a href="00.HRportfolio/3rdPF/3rdMain.html" target="_blank">click</a>
+            </li>
+            <li>
+                <a href="00.HRportfolio/3rdPF/3rdMain.html" target="_blank">
+                    3rd</a>
+            </li>
+        </ol>
+        <ol id="gnb4">
+            <li>
+                <a href="00.HRportfolio/4stPF/4stMain.html" target="_blank">click</a>
+            </li>
+            <li>
+                <a href="00.HRportfolio/4stPF/4stMain.html" target="_blank">
+                    4st</a>
             </li>
         </ol>
     </nav>
