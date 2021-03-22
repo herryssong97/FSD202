@@ -3,349 +3,153 @@
 
 <head>
     <meta charset="euc-kr">
-    <title>풀스택개발자 과정</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,500&display=swap');
-        /*font-family: 'Playfair Display', serif; >> 동그라미 내부글씨*/
-        @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@1,700&display=swap');
-        /*font-family: 'IBM Plex Sans', sans-serif; >> top글씨*/
-
-        html,
-        body {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            background-color: #ffeaea;
-        }
-
-
-        /*상단영역*/
-        #top {
-            position: relative;
-            width: 100%;
-            text-align: center;
-        }
-
-        /*song hye ri*/
-        h1 {
-            color: #ef3c3c;
-            font-family: 'IBM Plex Sans', sans-serif;
-            font-size: 40px;
-        }
-
-        /*portfolio*/
-        h2 {
-            color: #11689a;
-            font-family: 'IBM Plex Sans', sans-serif;
-            font-size: 30px;
-        }
-
-        /************************************************************/
-
-
-        /*메뉴바*/
-        .gnb {
-            position: relative;
-            /*부모는 #top*/
-            top: 15%;
-            width: 100%;
-        }
-        
-        #gnb1,
-        #gnb2,
-        #gnb3,
-        #gnb4{
-            padding: 0;
-        }
-
-        .gnb ol {
-            width: 200px;
-            height: 200px;
-            list-style: none;
-        }
-        
-
-        .gnb ol:first-child {
-            /*이미지 두개 겹쳐보임*/
-            position: absolute;
-            left: 20%;
-            transform: translateX(-50%);
-        }
-        .gnb ol:nth-child(2) {
-            /*이미지 두개 겹쳐보임*/
-            position: absolute;
-            left: 40%;
-            transform: translateX(-50%);
-        }
-        .gnb ol:nth-child(3) {
-            /*이미지 두개 겹쳐보임*/
-            position: absolute;
-            left: 60%;
-            transform: translateX(-50%);
-        }
-        .gnb ol:nth-child(4) {
-            /*이미지 두개 겹쳐보임*/
-            position: absolute;
-            left: 80%;
-            transform: translateX(-50%);
-        }
-        
-        .gnb ol li {
-            width: 100%;
-            height: 100%;
-        }
-
-
-        /*앞에 오는 애*/
-        .gnb li:nth-of-type(even) {
-            float: left;
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            text-align: center;
-        }
-
-        /*뒤에 있는애*/
-        .gnb li:nth-of-type(odd) {
-            float: left;
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            text-align: center;
-        }
-
-        /*앞에 오는 애*/
-        .gnb li:nth-of-type(even) a {
-            background-color: #ef3c3c;
-        }
-
-        /*뒤에 있는애*/
-        .gnb li:nth-of-type(odd) a {
-            background-color: #11689a;
-        }
-
-        .gnb li a {
-            position: absolute;
-            top: 0 !important;
-            left: 0;
-            display: block;
-            color: #fff;
-            text-decoration: none;
-            width: 100%;
-            height: 100%;
-            top: 20%;
-            font-family: 'Playfair Display', serif;
-            font-size: 30px;
-            border-radius: 50%;
-            line-height: 200px;
-        }
-
-        /*****************돌아가게하기*****************/
-        #gnb1 li:first-child a {
-            transform: rotateY(90deg);
-            /*원상태로 돌아올때 트랜지션*/
-            transition: all .4s ease-in;
-            /*기다림없이 처음에 천천히*/
-        }
-
-        /*2.*/
-        #gnb1:hover li:first-child a {
-            transform: rotateY(0deg);
-            /*트랜지션-0.4초 기다림*/
-            transition: all .4s ease-out .4s;
-        }
-
-        /*3.*/
-        #gnb1 li:last-child a {
-            /*원상태로 돌아올때 트랜지션*/
-            transition: all .4s ease-out .4s;
-            /*돌아올때는 기다렸다가 마지막에 천천히*/
-        }
-
-        /*4.*/
-        #gnb1:hover li:last-child a {
-            transform: rotateY(90deg);
-            /*트랜지션*/
-            transition: all .4s ease-in;
-        }
-
-        /*****************돌아가게하기*****************/
-
-        /*****************돌아가게하기2*****************/
-        #gnb2 li:first-child a {
-            transform: rotateY(90deg);
-            /*원상태로 돌아올때 트랜지션*/
-            transition: all .4s ease-in;
-            /*기다림없이 처음에 천천히*/
-        }
-
-        /*2.*/
-        #gnb2:hover li:first-child a {
-            transform: rotateY(0deg);
-            /*트랜지션-0.4초 기다림*/
-            transition: all .4s ease-out .4s;
-        }
-
-        /*3.*/
-        #gnb2 li:last-child a {
-            /*원상태로 돌아올때 트랜지션*/
-            transition: all .4s ease-out .4s;
-            /*돌아올때는 기다렸다가 마지막에 천천히*/
-        }
-
-        /*4.*/
-        #gnb2:hover li:last-child a {
-            transform: rotateY(90deg);
-            /*트랜지션*/
-            transition: all .4s ease-in;
-        }
-
-        /*****************돌아가게하기2*****************/
-
-        /*****************돌아가게하기3*****************/
-        #gnb3 li:first-child a {
-            transform: rotateY(90deg);
-            /*원상태로 돌아올때 트랜지션*/
-            transition: all .4s ease-in;
-            /*기다림없이 처음에 천천히*/
-        }
-
-        /*2.*/
-        #gnb3:hover li:first-child a {
-            transform: rotateY(0deg);
-            /*트랜지션-0.4초 기다림*/
-            transition: all .4s ease-out .4s;
-        }
-
-        /*3.*/
-        #gnb3 li:last-child a {
-            /*원상태로 돌아올때 트랜지션*/
-            transition: all .4s ease-out .4s;
-            /*돌아올때는 기다렸다가 마지막에 천천히*/
-        }
-
-        /*4.*/
-        #gnb3:hover li:last-child a {
-            transform: rotateY(90deg);
-            /*트랜지션*/
-            transition: all .4s ease-in;
-        }
-
-        /*****************돌아가게하기3*****************/
-        
-        /*****************돌아가게하기4*****************/
-        #gnb4 li:first-child a {
-            transform: rotateY(90deg);
-            /*원상태로 돌아올때 트랜지션*/
-            transition: all .4s ease-in;
-            /*기다림없이 처음에 천천히*/
-        }
-
-        /*2.*/
-        #gnb4:hover li:first-child a {
-            transform: rotateY(0deg);
-            /*트랜지션-0.4초 기다림*/
-            transition: all .4s ease-out .4s;
-        }
-
-        /*3.*/
-        #gnb4 li:last-child a {
-            /*원상태로 돌아올때 트랜지션*/
-            transition: all .4s ease-out .4s;
-            /*돌아올때는 기다렸다가 마지막에 천천히*/
-        }
-
-        /*4.*/
-        #gnb4:hover li:last-child a {
-            transform: rotateY(90deg);
-            /*트랜지션*/
-            transition: all .4s ease-in;
-        }
-
-        /*****************돌아가게하기4*****************/
-
-    </style>
-    <script>
-    $(function(){ /// jQB //////////////////
-        $("#gnb1").click(
-            function() { 
-                location.href='window.open().00.HRportfolio/1stPF/1stMain.html';
-            
-            }); ///// click ///////////
-        
-        $("#gnb2").click(
-            function() { 
-                location.href='window.open().00.HRportfolio/2ndPF/2ndMain.html';
-            
-            }); ///// click ///////////
-        
-        $("#gnb3").click(
-            function() { 
-                location.href='window.open().00.HRportfolio/3rdPF/3rdMain.html';
-            
-            }); ///// click ///////////
-        
-        
-        $("#gnb4").click(
-            function() { 
-                location.href='window.open().00.HRportfolio/4thPF/4stMain.html';
-            
-            }); ///// click ///////////
-        
-        
-        
-        
-    }); /////////// jQB ////////////////////
-    </script>
-
-
+    <title>풀스택개발자 과정_포트폴리오 인트로</title>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/jquery-touch-punch.min.js"></script>
+    <!--터치펀치로 모바일 드래그 작동가능-->
+    <script src="js/autoscroll.js"></script>
+    <script src="js/main.js"></script>
 </head>
 
 <body>
-    <header id="top">
-        <h1>Song Hye Ri</h1>
-        <h2>PORTFOLIO</h2>
+
+    <!--상단영역-->
+    <header>
+        <h1 class="logo">Hyeri</h1>
+        <ul id="gnb">
+            <li><a href="#">Who am I</a></li>
+            <li><a href="#">Learning about</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">Thanks</a></li>
+        </ul>
     </header>
-    <nav class="gnb">
-        <ol id="gnb1">
-            <li>
-                <a href="00.HRportfolio/1stPF/1stMain.html" target="_blank">click</a>
-            </li>
-            <li>
-                <a href="00.HRportfolio/1stPF/1stMain.html" target="_blank">
-                    1st</a>
-            </li>
-        </ol>
-        <ol id="gnb2">
-            <li>
-                <a href="00.HRportfolio/2ndPF/2ndMain.html" target="_blank">click</a>
-            </li>
-            <li>
-                <a href="00.HRportfolio/2ndPF/2ndMain.html" target="_blank">
-                    2nd</a>
-            </li>
-        </ol>
-        <ol id="gnb3">
-            <li>
-                <a href="00.HRportfolio/3rdPF/3rdMain.html" target="_blank">click</a>
-            </li>
-            <li>
-                <a href="00.HRportfolio/3rdPF/3rdMain.html" target="_blank">
-                    3rd</a>
-            </li>
-        </ol>
-        <ol id="gnb4">
-            <li>
-                <a href="00.HRportfolio/4thPF/4thMain.html" target="_blank">click</a>
-            </li>
-            <li>
-                <a href="00.HRportfolio/4thPF/4thMain.html" target="_blank">
-                    4th</a>
-            </li>
-        </ol>
-    </nav>
+
+    <content>
+        <div class="wrap">
+            <!--컨텐츠영역1: 자기소개/연락처-->
+            <div class="con1 page">
+                <h2 class="int">개발자로서 떼는 첫 걸음</h2>
+                <div class="me">
+                    <dl>
+                        <dt>저는!</dt>
+                        <dd>
+                            이름 : 송혜리 <br>
+                            생년월일 : 1997.02.05 <br>
+                            거주지 : <br> 경기도 하남시 풍산동 하우스디스마트밸리 <br>
+                            자격증 : <br>
+                            GTQ1급 자격증(Photoshop),<br> 운전면허2종(오토), <br>
+                            웹디자인 기능사+컴퓨터 그래픽스 기능사 <br>실기시험 예정 <br>
+                            <br><br>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>대학교</dt>
+                        <dd>
+                            경북대학교(상주캠퍼스) <br>
+                            섬유패션디자인학부 패션디자인전공 졸업 <br>
+                            3.21 / 4.5 <br>
+                            2016.03 ~ 2020.02 <br><br>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>고등학교</dt>
+                        <dd>
+                            경상대학교사범대학부설고등학교 졸업<br>
+                            문과계열 <br>
+                            2013.03 ~ 2016.03 <br>
+                        </dd>
+                    </dl>
+                </div>
+
+
+            </div>
+
+            <!--컨텐츠영역2: 수료한 학원에서 배운 것들-->
+            <div class="con2 page">
+                <dl>
+                    <dt>교육이수<br><br></dt>
+                    <dd>
+                        - 교육기관명 : 하이미디어 컴퓨터 학원 <br>
+                        - 주요 업무 : 풀스택 개발자양성과정(프론트엔드&amp;백엔드) <br>
+                        - 기간 : 2020.10.20 ~ 2021.04.01 (5.5개월) <br>
+                        - 상세 내용 : <br>
+                        웹사이트 디자인 (Photoshop), 벡터디자인(Illustrator)활용 <br>
+                        HTML을 이용한 웹페이지 기획 및 제작 <br>
+                        Javascript 및 고급기법 <br>
+                        J-Query를 활용한 스크립트 작성 <br>
+                        포트폴리오 제작 <br>
+                        서버사이드스크립트(PHP), SQL 코딩 <br><br>
+                    </dd>
+                </dl>
+
+            </div>
+
+            <!--컨텐츠영역3: 포트폴리오-->
+            <div class="con3 page">
+                <nav class="gnb">
+                    <ol class="gnb1">
+                        <li>
+                            <a href="00.HRportfolio/1stPF/1stMain.html" target="_blank">click</a>
+                        </li>
+                        <li>
+                            <a href="00.HRportfolio/1stPF/1stMain.html" target="_blank">
+                                1st</a>
+                        </li>
+                    </ol>
+                    <ol class="gnb2">
+                        <li>
+                            <a href="00.HRportfolio/2ndPF/2ndMain.html" target="_blank">click</a>
+                        </li>
+                        <li>
+                            <a href="00.HRportfolio/2ndPF/2ndMain.html" target="_blank">
+                                2nd</a>
+                        </li>
+                    </ol>
+                    <ol class="gnb3">
+                        <li>
+                            <a href="00.HRportfolio/3rdPF/3rdMain.html" target="_blank">click</a>
+                        </li>
+                        <li>
+                            <a href="00.HRportfolio/3rdPF/3rdMain.html" target="_blank">
+                                3rd</a>
+                        </li>
+                    </ol>
+                    <ol class="gnb4">
+                        <li>
+                            <a href="00.HRportfolio/4thPF/4thMain.html" target="_blank">click</a>
+                        </li>
+                        <li>
+                            <a href="00.HRportfolio/4thPF/4thMain.html" target="_blank">
+                                4th</a>
+                        </li>
+                    </ol>
+                </nav>
+
+
+
+            </div>
+
+            <!--컨텐츠영역4: 감사합니다-->
+            <div class="con4 page">
+                <!--연락처-->
+                <h3 class="call">
+                    <ul>
+                        <li>Please feel free to contact me</li>
+                        <li>봐 주셔서 감사합니다 :)</li>
+                        <li>010-2782-1484</li>
+                        <li>herryssong97@naver.com</li>
+                    </ul>
+                </h3>
+
+            </div>
+        </div>
+    </content>
+
+
+
+
 
 
 
