@@ -46,10 +46,10 @@ header h1 img {
 header nav {
     position: absolute;
     float: right;
-    width: 1000px;
+    width: 1100px;
     top: 40%;
-    right: 2%;
-
+    left: 50%;
+    transform: translateX(-35%);
     /*border: 1px dotted yellow;*/
 }
 
@@ -70,7 +70,7 @@ header nav ul.gnb .ssub {
 }
 
 header nav ul.gnb .msub {
-    padding-right: 5px;
+    padding-left: 5px;
 }
 
 header nav ul.gnb .msub > a {
@@ -84,7 +84,7 @@ header nav ul.gnb .msub > a:hover {
 }
 
 header nav ul.gnb > li:nth-child(5) {
-    padding-right: 50px;
+    padding-right: 9%;
 }
 
 header nav ul.gnb .ssub {
