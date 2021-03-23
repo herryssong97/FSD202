@@ -1,0 +1,107 @@
+@charset "utf-8";
+/*포폴 미디어쿼리 media.css*/
+
+@media only screen and (max-width:745px) {
+
+    header {
+        width: 100%;
+    }
+
+    header ul#gnb {
+        display: none;
+    }
+
+    .bnav {
+        display: block;
+    }
+
+
+    /*중간*/
+    .wrap h2.int {
+        /*제목*/
+        top: 18%;
+        width: 70%;
+        font-size: 23px;
+    }
+
+    .con1 .me {
+        width: 80%;
+        height: 80%;
+        top: 23%;
+        transform: translateX(-50%);
+    }
+
+    .con1 .me dl {
+        margin-bottom: 5px;
+    }
+
+    .con1 .me dt {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 6px;
+    }
+
+    .con1 .me dd {
+        padding-left: 8px;
+        font-size: 15px;
+        line-height: 20px;
+    }
+
+    /*교육이수*/
+    .con2 dl {
+        border: 4px double #603000;
+        width: 80%;
+        height: 60%;
+        top: 23%;
+        transform: translateX(-50%);
+    }
+
+    .con2 dt {
+        font-size: 23px;
+        font-weight: bold;
+        margin-bottom: 6px;
+    }
+
+    .con2 dd {
+        font-size: 15px;
+        line-height: 22px;
+    }
+
+
+    .gnb ol {
+        top: 40%;
+        width: 100px;
+        height: 100px;
+        list-style: none;
+    }
+
+    .gnb li a {
+        text-shadow: 0 1px 3px black;
+    }
+
+    .con4 h3.call li:first-child {
+        font-size: 25px;
+        font-family: 'Playfair Display', serif;
+    }
+
+    .con4 h3.call li:nth-child(2) {
+        font-size: 18px;
+        color: #6d6d6d;
+        font-family: 'Nanum Myeongjo', serif;
+    }
+
+    .con4 h3.call li:nth-child(3) {
+        font-size: 23px;
+        padding: 10px 0;
+    }
+
+    .con4 h3.call li:nth-child(4) {
+        font-size: 23px;
+        padding-bottom: 25px;
+    }
+
+
+}
+
+/*745px 이하 미디어쿼리*/
+/**********************/
