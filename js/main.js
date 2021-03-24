@@ -1,4 +1,5 @@
-$(document).ready(function () {
+$(function () { /// jQB //////////////////
+    
 
     $("#gnb a,.bnav a").click(function (e) {
 
